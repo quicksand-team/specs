@@ -1,0 +1,44 @@
+{
+  "private": false,
+  "name": "@quicksand/eslint-config",
+  "version": "1.0.0-alpha.3",
+  "type": "module",
+  "main": "./index.js",
+  "files": [
+    "./lib"
+  ],
+  "scripts": {
+    "build": "tsx scripts/generate.ts"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/eslint-parser": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "vue-eslint-parser": "^9.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^8.45.0",
+    "@quicksand/typescript-config": "workspace:latest",
+    "@types/eslint": "^8.44.0",
+    "@types/eslint__js": "^8.42.0",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.4.2",
+    "deepmerge-ts": "^5.1.0",
+    "fs-extra": "^11.1.1",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./index.js",
+    "./lib/": "./lib/"
+  }
+}

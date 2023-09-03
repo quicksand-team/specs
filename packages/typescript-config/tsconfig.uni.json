@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.vue.json",
+  "compilerOptions": {
+    "types": ["@dcloudio/types"]
+  }
+}

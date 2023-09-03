@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.browser.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "@builder.io/mitosis"
+  }
+}

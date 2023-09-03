@@ -1,0 +1,77 @@
+{
+  "folders": [
+    {
+      "path": "./packages/eslint-config",
+      "name": "eslint-config"
+    },
+    {
+      "path": "./packages/prettier-config",
+      "name": "prettier-config"
+    },
+    {
+      "path": "./packages/typescript-config",
+      "name": "typescript-config"
+    },
+    {
+      "path": ".",
+      "name": "specs-workspace"
+    }
+  ],
+  "extensions": {
+    "recommendations": ["esbenp.prettier-vscode"]
+  },
+  "settings": {
+    "editor.rulers": [80, 100, 120],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.documentSelectors": ["**/*.astro"],
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "diffEditor.codeLens": true,
+    "files.associations": {
+      "manifest.json": "jsonc",
+      "pages.json": "jsonc"
+    },
+    "cSpell.diagnosticLevel": "Hint",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[less]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[astro]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[prisma]": {
+      "editor.defaultFormatter": "Prisma.prisma"
+    },
+    "commentTranslate.multiLineMerge": true,
+    "eslint.experimental.useFlatConfig": true
+  }
+}

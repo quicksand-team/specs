@@ -1,0 +1,18 @@
+{
+  "private": false,
+  "name": "@quicksand/typescript-config",
+  "version": "1.0.0-alpha.3",
+  "type": "commonjs",
+  "main": "./tsconfig.json",
+  "files": [
+    "./tsconfig.browser.json",
+    "./tsconfig.mitosis.json",
+    "./tsconfig.node.json",
+    "./tsconfig.react.json",
+    "./tsconfig.uni.json",
+    "./tsconfig.vue.json"
+  ],
+  "devDependencies": {
+    "typescript": "latest"
+  }
+}

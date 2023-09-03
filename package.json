@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "@quicksand/specs-workspace",
+  "version": "1.0.0-alpha.3",
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "format": "prettier --write .",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "@quicksand/eslint-config": "workspace:*",
+    "@quicksand/prettier-config": "workspace:*",
+    "@quicksand/typescript-config": "workspace:*",
+    "turbo": "latest",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "pnpm@7.15.0"
+}
