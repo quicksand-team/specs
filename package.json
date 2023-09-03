@@ -1,18 +1,30 @@
 {
   "private": true,
   "name": "@quicksand/specs-workspace",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "type": "module",
   "scripts": {
     "build": "turbo run build",
+    "commit": "git-cz",
     "dev": "turbo run dev",
     "format": "prettier --write .",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "prepare": "husky install",
+    "publish-packages": "turbo run build lint && changeset version && changeset publish"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@quicksand/commitlint-config": "workspace:*",
     "@quicksand/eslint-config": "workspace:*",
+    "@quicksand/lint-staged-config": "workspace:*",
     "@quicksand/prettier-config": "workspace:*",
     "@quicksand/typescript-config": "workspace:*",
+    "husky": "^8.0.3",
     "turbo": "latest",
     "typescript": "^5.2.2"
   },

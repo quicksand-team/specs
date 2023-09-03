@@ -50,11 +50,7 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "always",
-                "never",
-                "consistent"
-              ]
+              "enum": ["always", "never", "consistent"]
             },
             {
               "type": "object",
@@ -63,10 +59,7 @@
                   "type": "boolean"
                 },
                 "minItems": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
+                  "type": ["integer", "null"],
                   "minimum": 0
                 }
               },
@@ -94,10 +87,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -169,11 +159,7 @@
           "basicConfig": {
             "oneOf": [
               {
-                "enum": [
-                  "always",
-                  "never",
-                  "consistent"
-                ]
+                "enum": ["always", "never", "consistent"]
               },
               {
                 "type": "object",
@@ -182,10 +168,7 @@
                     "type": "boolean"
                   },
                   "minItems": {
-                    "type": [
-                      "integer",
-                      "null"
-                    ],
+                    "type": ["integer", "null"],
                     "minimum": 0
                   }
                 },
@@ -238,10 +221,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always",
-                  "never"
-                ]
+                "enum": ["always", "never"]
               }
             ],
             "minItems": 0,
@@ -251,9 +231,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "as-needed"
-                ]
+                "enum": ["as-needed"]
               },
               {
                 "type": "object",
@@ -291,10 +269,7 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "always",
-            "as-needed"
-          ]
+          "enum": ["always", "as-needed"]
         },
         {
           "type": "object",
@@ -358,7 +333,7 @@
       },
       "schema": [],
       "messages": {
-        "outOfScope": "'{{name}}' used outside of binding context."
+        "outOfScope": "'{{name}}' declared on line {{definitionLine}} column {{definitionColumn}} is used outside of binding context."
       }
     }
   },
@@ -373,10 +348,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -395,11 +367,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "1tbs",
-            "stroustrup",
-            "allman"
-          ]
+          "enum": ["1tbs", "stroustrup", "allman"]
         },
         {
           "type": "object",
@@ -471,10 +439,7 @@
               "default": false
             },
             "properties": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             "allow": {
               "type": "array",
@@ -507,10 +472,7 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "oneOf": [
@@ -617,12 +579,7 @@
       "schema": {
         "definitions": {
           "value": {
-            "enum": [
-              "always-multiline",
-              "always",
-              "never",
-              "only-multiline"
-            ]
+            "enum": ["always-multiline", "always", "never", "only-multiline"]
           },
           "valueWithIgnore": {
             "enum": [
@@ -715,10 +672,7 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "first",
-            "last"
-          ]
+          "enum": ["first", "last"]
         },
         {
           "type": "object",
@@ -788,10 +742,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -893,9 +844,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "all"
-                ]
+                "enum": ["all"]
               }
             ],
             "minItems": 0,
@@ -905,16 +854,10 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "multi",
-                  "multi-line",
-                  "multi-or-nest"
-                ]
+                "enum": ["multi", "multi-line", "multi-or-nest"]
               },
               {
-                "enum": [
-                  "consistent"
-                ]
+                "enum": ["consistent"]
               }
             ],
             "minItems": 0,
@@ -993,10 +936,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "object",
-            "property"
-          ]
+          "enum": ["object", "property"]
         }
       ],
       "fixable": "code",
@@ -1048,12 +988,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never",
-            "unix",
-            "windows"
-          ]
+          "enum": ["always", "never", "unix", "windows"]
         }
       ],
       "messages": {
@@ -1076,19 +1011,13 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always"
-                ]
+                "enum": ["always"]
               },
               {
                 "type": "object",
                 "properties": {
                   "null": {
-                    "enum": [
-                      "always",
-                      "never",
-                      "ignore"
-                    ]
+                    "enum": ["always", "never", "ignore"]
                   }
                 },
                 "additionalProperties": false
@@ -1100,10 +1029,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "smart",
-                  "allow-null"
-                ]
+                "enum": ["smart", "allow-null"]
               }
             ],
             "additionalItems": false
@@ -1146,9 +1072,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "never"
-                ]
+                "enum": ["never"]
               }
             ],
             "minItems": 0,
@@ -1158,9 +1082,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always"
-                ]
+                "enum": ["always"]
               },
               {
                 "type": "object",
@@ -1199,10 +1121,7 @@
             "additionalItems": false,
             "items": [
               {
-                "enum": [
-                  "always",
-                  "never"
-                ]
+                "enum": ["always", "never"]
               },
               {
                 "type": "object",
@@ -1257,11 +1176,7 @@
       "schema": {
         "definitions": {
           "value": {
-            "enum": [
-              "always",
-              "as-needed",
-              "never"
-            ]
+            "enum": ["always", "as-needed", "never"]
           }
         },
         "items": [
@@ -1295,10 +1210,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "declaration",
-            "expression"
-          ]
+          "enum": ["declaration", "expression"]
         },
         {
           "type": "object",
@@ -1328,11 +1240,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never",
-            "consistent"
-          ]
+          "enum": ["always", "never", "consistent"]
         }
       ],
       "messages": {
@@ -1397,12 +1305,7 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "before",
-                "after",
-                "both",
-                "neither"
-              ]
+              "enum": ["before", "after", "both", "neither"]
             },
             {
               "type": "object",
@@ -1416,12 +1319,7 @@
                 "named": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "before",
-                        "after",
-                        "both",
-                        "neither"
-                      ]
+                      "enum": ["before", "after", "both", "neither"]
                     },
                     {
                       "type": "object",
@@ -1440,12 +1338,7 @@
                 "anonymous": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "before",
-                        "after",
-                        "both",
-                        "neither"
-                      ]
+                      "enum": ["before", "after", "both", "neither"]
                     },
                     {
                       "type": "object",
@@ -1464,12 +1357,7 @@
                 "method": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "before",
-                        "after",
-                        "both",
-                        "neither"
-                      ]
+                      "enum": ["before", "after", "both", "neither"]
                     },
                     {
                       "type": "object",
@@ -1552,11 +1440,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "anyOrder",
-            "getBeforeSet",
-            "setBeforeGet"
-          ]
+          "enum": ["anyOrder", "getBeforeSet", "setBeforeGet"]
         }
       ],
       "messages": {
@@ -1602,9 +1486,7 @@
   "id-blacklist": {
     "meta": {
       "deprecated": true,
-      "replacedBy": [
-        "id-denylist"
-      ],
+      "replacedBy": ["id-denylist"],
       "type": "suggestion",
       "docs": {
         "description": "Disallow specified identifiers",
@@ -1678,10 +1560,7 @@
               }
             },
             "properties": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             }
           },
           "additionalProperties": false
@@ -1747,10 +1626,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "beside",
-            "below"
-          ]
+          "enum": ["beside", "below"]
         }
       ],
       "messages": {
@@ -1772,9 +1648,7 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "tab"
-              ]
+              "enum": ["tab"]
             },
             {
               "type": "integer",
@@ -1799,10 +1673,7 @@
                       "minimum": 0
                     },
                     {
-                      "enum": [
-                        "first",
-                        "off"
-                      ]
+                      "enum": ["first", "off"]
                     }
                   ]
                 },
@@ -1816,10 +1687,7 @@
                           "minimum": 0
                         },
                         {
-                          "enum": [
-                            "first",
-                            "off"
-                          ]
+                          "enum": ["first", "off"]
                         }
                       ]
                     },
@@ -1830,10 +1698,7 @@
                           "minimum": 0
                         },
                         {
-                          "enum": [
-                            "first",
-                            "off"
-                          ]
+                          "enum": ["first", "off"]
                         }
                       ]
                     },
@@ -1844,10 +1709,7 @@
                           "minimum": 0
                         },
                         {
-                          "enum": [
-                            "first",
-                            "off"
-                          ]
+                          "enum": ["first", "off"]
                         }
                       ]
                     }
@@ -1863,9 +1725,7 @@
                   "minimum": 0
                 },
                 {
-                  "enum": [
-                    "off"
-                  ]
+                  "enum": ["off"]
                 }
               ]
             },
@@ -1876,9 +1736,7 @@
                   "minimum": 0
                 },
                 {
-                  "enum": [
-                    "off"
-                  ]
+                  "enum": ["off"]
                 }
               ]
             },
@@ -1892,10 +1750,7 @@
                       "minimum": 0
                     },
                     {
-                      "enum": [
-                        "first",
-                        "off"
-                      ]
+                      "enum": ["first", "off"]
                     }
                   ]
                 },
@@ -1916,10 +1771,7 @@
                       "minimum": 0
                     },
                     {
-                      "enum": [
-                        "first",
-                        "off"
-                      ]
+                      "enum": ["first", "off"]
                     }
                   ]
                 },
@@ -1950,10 +1802,7 @@
                       "minimum": 0
                     },
                     {
-                      "enum": [
-                        "first",
-                        "off"
-                      ]
+                      "enum": ["first", "off"]
                     }
                   ]
                 }
@@ -1967,10 +1816,7 @@
                   "minimum": 0
                 },
                 {
-                  "enum": [
-                    "first",
-                    "off"
-                  ]
+                  "enum": ["first", "off"]
                 }
               ]
             },
@@ -1981,10 +1827,7 @@
                   "minimum": 0
                 },
                 {
-                  "enum": [
-                    "first",
-                    "off"
-                  ]
+                  "enum": ["first", "off"]
                 }
               ]
             },
@@ -1995,10 +1838,7 @@
                   "minimum": 0
                 },
                 {
-                  "enum": [
-                    "first",
-                    "off"
-                  ]
+                  "enum": ["first", "off"]
                 }
               ]
             },
@@ -2041,17 +1881,13 @@
         "url": "https://eslint.org/docs/latest/rules/indent-legacy"
       },
       "deprecated": true,
-      "replacedBy": [
-        "indent"
-      ],
+      "replacedBy": ["indent"],
       "fixable": "whitespace",
       "schema": [
         {
           "oneOf": [
             {
-              "enum": [
-                "tab"
-              ]
+              "enum": ["tab"]
             },
             {
               "type": "integer",
@@ -2109,9 +1945,7 @@
                       "minimum": 0
                     },
                     {
-                      "enum": [
-                        "first"
-                      ]
+                      "enum": ["first"]
                     }
                   ]
                 },
@@ -2131,9 +1965,7 @@
                       "minimum": 0
                     },
                     {
-                      "enum": [
-                        "first"
-                      ]
+                      "enum": ["first"]
                     }
                   ]
                 },
@@ -2153,9 +1985,7 @@
                       "minimum": 0
                     },
                     {
-                      "enum": [
-                        "first"
-                      ]
+                      "enum": ["first"]
                     }
                   ]
                 }
@@ -2168,9 +1998,7 @@
                   "minimum": 0
                 },
                 {
-                  "enum": [
-                    "first"
-                  ]
+                  "enum": ["first"]
                 }
               ]
             },
@@ -2181,9 +2009,7 @@
                   "minimum": 0
                 },
                 {
-                  "enum": [
-                    "first"
-                  ]
+                  "enum": ["first"]
                 }
               ]
             }
@@ -2210,9 +2036,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always"
-                ]
+                "enum": ["always"]
               }
             ],
             "minItems": 0,
@@ -2222,9 +2046,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "never"
-                ]
+                "enum": ["never"]
               },
               {
                 "type": "object",
@@ -2258,10 +2080,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "prefer-single",
-            "prefer-double"
-          ]
+          "enum": ["prefer-single", "prefer-double"]
         }
       ],
       "messages": {
@@ -2287,25 +2106,16 @@
                 "align": {
                   "anyOf": [
                     {
-                      "enum": [
-                        "colon",
-                        "value"
-                      ]
+                      "enum": ["colon", "value"]
                     },
                     {
                       "type": "object",
                       "properties": {
                         "mode": {
-                          "enum": [
-                            "strict",
-                            "minimum"
-                          ]
+                          "enum": ["strict", "minimum"]
                         },
                         "on": {
-                          "enum": [
-                            "colon",
-                            "value"
-                          ]
+                          "enum": ["colon", "value"]
                         },
                         "beforeColon": {
                           "type": "boolean"
@@ -2319,10 +2129,7 @@
                   ]
                 },
                 "mode": {
-                  "enum": [
-                    "strict",
-                    "minimum"
-                  ]
+                  "enum": ["strict", "minimum"]
                 },
                 "beforeColon": {
                   "type": "boolean"
@@ -2340,10 +2147,7 @@
                   "type": "object",
                   "properties": {
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -2360,25 +2164,16 @@
                     "align": {
                       "anyOf": [
                         {
-                          "enum": [
-                            "colon",
-                            "value"
-                          ]
+                          "enum": ["colon", "value"]
                         },
                         {
                           "type": "object",
                           "properties": {
                             "mode": {
-                              "enum": [
-                                "strict",
-                                "minimum"
-                              ]
+                              "enum": ["strict", "minimum"]
                             },
                             "on": {
-                              "enum": [
-                                "colon",
-                                "value"
-                              ]
+                              "enum": ["colon", "value"]
                             },
                             "beforeColon": {
                               "type": "boolean"
@@ -2392,10 +2187,7 @@
                       ]
                     },
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -2416,10 +2208,7 @@
                   "type": "object",
                   "properties": {
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -2434,10 +2223,7 @@
                   "type": "object",
                   "properties": {
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -2452,16 +2238,10 @@
                   "type": "object",
                   "properties": {
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "on": {
-                      "enum": [
-                        "colon",
-                        "value"
-                      ]
+                      "enum": ["colon", "value"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -3353,19 +3133,13 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "above",
-                "beside"
-              ]
+              "enum": ["above", "beside"]
             },
             {
               "type": "object",
               "properties": {
                 "position": {
-                  "enum": [
-                    "above",
-                    "beside"
-                  ]
+                  "enum": ["above", "beside"]
                 },
                 "ignorePattern": {
                   "type": "string"
@@ -3399,10 +3173,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "unix",
-            "windows"
-          ]
+          "enum": ["unix", "windows"]
         }
       ],
       "messages": {
@@ -3498,25 +3269,16 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             {
               "type": "object",
               "properties": {
                 "before": {
-                  "enum": [
-                    "always",
-                    "never"
-                  ]
+                  "enum": ["always", "never"]
                 },
                 "after": {
-                  "enum": [
-                    "always",
-                    "never"
-                  ]
+                  "enum": ["always", "never"]
                 }
               },
               "additionalProperties": false,
@@ -3531,9 +3293,7 @@
         "unexpected": "Unexpected newline {{location}} \"{{value}}\" directive."
       },
       "deprecated": true,
-      "replacedBy": [
-        "padding-line-between-statements"
-      ]
+      "replacedBy": ["padding-line-between-statements"]
     }
   },
   "lines-between-class-members": {
@@ -3547,10 +3307,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -4087,10 +3844,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "starred-block",
-                  "bare-block"
-                ]
+                "enum": ["starred-block", "bare-block"]
               }
             ],
             "additionalItems": false
@@ -4099,9 +3853,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "separate-lines"
-                ]
+                "enum": ["separate-lines"]
               },
               {
                 "type": "object",
@@ -4138,11 +3890,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "always-multiline",
-            "never"
-          ]
+          "enum": ["always", "always-multiline", "never"]
         }
       ],
       "messages": {
@@ -4217,10 +3965,7 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -4239,10 +3984,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "never",
-            "always"
-          ]
+          "enum": ["never", "always"]
         }
       ],
       "fixable": "whitespace",
@@ -4251,9 +3993,7 @@
         "unexpected": "Unexpected blank line after variable declarations."
       },
       "deprecated": true,
-      "replacedBy": [
-        "padding-line-between-statements"
-      ]
+      "replacedBy": ["padding-line-between-statements"]
     }
   },
   "newline-before-return": {
@@ -4270,9 +4010,7 @@
         "expected": "Expected newline before return statement."
       },
       "deprecated": true,
-      "replacedBy": [
-        "padding-line-between-statements"
-      ]
+      "replacedBy": ["padding-line-between-statements"]
     }
   },
   "newline-per-chained-call": {
@@ -4458,9 +4196,7 @@
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/no-catch-shadow"
       },
-      "replacedBy": [
-        "no-shadow"
-      ],
+      "replacedBy": ["no-shadow"],
       "deprecated": true,
       "schema": [],
       "messages": {
@@ -4507,10 +4243,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "except-parens",
-            "always"
-          ]
+          "enum": ["except-parens", "always"]
         }
       ],
       "messages": {
@@ -4933,7 +4666,18 @@
         "recommended": true,
         "url": "https://eslint.org/docs/latest/rules/no-empty-pattern"
       },
-      "schema": [],
+      "schema": [
+        {
+          "type": "object",
+          "properties": {
+            "allowObjectPatternsAsParameters": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ],
       "messages": {
         "unexpected": "Unexpected empty {{type}} pattern."
       }
@@ -5106,9 +4850,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "functions"
-                ]
+                "enum": ["functions"]
               }
             ],
             "minItems": 0,
@@ -5118,14 +4860,15 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "all"
-                ]
+                "enum": ["all"]
               },
               {
                 "type": "object",
                 "properties": {
                   "conditionalAssign": {
+                    "type": "boolean"
+                  },
+                  "ternaryOperandBinaryExpressions": {
                     "type": "boolean"
                   },
                   "nestedBinaryExpressions": {
@@ -5135,12 +4878,7 @@
                     "type": "boolean"
                   },
                   "ignoreJSX": {
-                    "enum": [
-                      "none",
-                      "all",
-                      "single-line",
-                      "multi-line"
-                    ]
+                    "enum": ["none", "all", "single-line", "multi-line"]
                   },
                   "enforceForArrowConditionals": {
                     "type": "boolean"
@@ -5306,12 +5044,7 @@
             "allow": {
               "type": "array",
               "items": {
-                "enum": [
-                  "~",
-                  "!!",
-                  "+",
-                  "*"
-                ]
+                "enum": ["~", "!!", "+", "*"]
               },
               "uniqueItems": true
             }
@@ -5416,10 +5149,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "functions",
-            "both"
-          ]
+          "enum": ["functions", "both"]
         }
       ],
       "messages": {
@@ -5504,6 +5234,10 @@
               "default": false
             },
             "skipRegExps": {
+              "type": "boolean",
+              "default": false
+            },
+            "skipJSXText": {
               "type": "boolean",
               "default": false
             }
@@ -5822,11 +5556,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "smart-tabs",
-            true,
-            false
-          ]
+          "enum": ["smart-tabs", true, false]
         }
       ],
       "messages": {
@@ -5934,9 +5664,7 @@
               "minimum": 0
             }
           },
-          "required": [
-            "max"
-          ],
+          "required": ["max"],
           "additionalProperties": false
         }
       ],
@@ -5956,9 +5684,7 @@
         "url": "https://eslint.org/docs/latest/rules/no-native-reassign"
       },
       "deprecated": true,
-      "replacedBy": [
-        "no-global-assign"
-      ],
+      "replacedBy": ["no-global-assign"],
       "schema": [
         {
           "type": "object",
@@ -6001,9 +5727,7 @@
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/no-negated-in-lhs"
       },
-      "replacedBy": [
-        "no-unsafe-negation"
-      ],
+      "replacedBy": ["no-unsafe-negation"],
       "deprecated": true,
       "schema": [],
       "messages": {
@@ -6200,9 +5924,7 @@
               "type": "object",
               "properties": {
                 "props": {
-                  "enum": [
-                    false
-                  ]
+                  "enum": [false]
                 }
               },
               "additionalProperties": false
@@ -6211,9 +5933,7 @@
               "type": "object",
               "properties": {
                 "props": {
-                  "enum": [
-                    true
-                  ]
+                  "enum": [true]
                 },
                 "ignorePropertyModificationsFor": {
                   "type": "array",
@@ -6322,9 +6042,23 @@
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/no-promise-executor-return"
       },
-      "schema": [],
+      "hasSuggestions": true,
+      "schema": [
+        {
+          "type": "object",
+          "properties": {
+            "allowVoid": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ],
       "messages": {
-        "returnsValue": "Return values from promise executor functions cannot be read."
+        "returnsValue": "Return values from promise executor functions cannot be read.",
+        "prependVoid": "Prepend `void` to the expression.",
+        "wrapBraces": "Wrap the expression in `{}`."
       }
     }
   },
@@ -6491,9 +6225,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "name"
-              ],
+              "required": ["name"],
               "additionalProperties": false
             }
           ]
@@ -6556,9 +6288,7 @@
                     }
                   },
                   "additionalProperties": false,
-                  "required": [
-                    "name"
-                  ]
+                  "required": ["name"]
                 }
               ]
             },
@@ -6595,9 +6325,7 @@
                             }
                           },
                           "additionalProperties": false,
-                          "required": [
-                            "name"
-                          ]
+                          "required": ["name"]
                         }
                       ]
                     },
@@ -6642,9 +6370,7 @@
                             }
                           },
                           "additionalProperties": false,
-                          "required": [
-                            "group"
-                          ]
+                          "required": ["group"]
                         },
                         "uniqueItems": true
                       }
@@ -6691,9 +6417,7 @@
                     }
                   },
                   "additionalProperties": false,
-                  "required": [
-                    "name"
-                  ]
+                  "required": ["name"]
                 }
               ]
             },
@@ -6723,9 +6447,7 @@
                           }
                         },
                         "additionalProperties": false,
-                        "required": [
-                          "name"
-                        ]
+                        "required": ["name"]
                       }
                     ]
                   },
@@ -6778,9 +6500,7 @@
                 }
               },
               "additionalProperties": false,
-              "required": [
-                "object"
-              ]
+              "required": ["object"]
             },
             {
               "type": "object",
@@ -6796,9 +6516,7 @@
                 }
               },
               "additionalProperties": false,
-              "required": [
-                "property"
-              ]
+              "required": ["property"]
             }
           ]
         },
@@ -6835,9 +6553,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "selector"
-              ],
+              "required": ["selector"],
               "additionalProperties": false
             }
           ]
@@ -6860,10 +6576,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "except-parens",
-            "always"
-          ]
+          "enum": ["except-parens", "always"]
         }
       ],
       "messages": {
@@ -6882,6 +6595,8 @@
         "url": "https://eslint.org/docs/latest/rules/no-return-await"
       },
       "fixable": null,
+      "deprecated": true,
+      "replacedBy": [],
       "schema": [],
       "messages": {
         "removeAwait": "Remove redundant `await`.",
@@ -6997,11 +6712,7 @@
               "default": false
             },
             "hoist": {
-              "enum": [
-                "all",
-                "functions",
-                "never"
-              ],
+              "enum": ["all", "functions", "never"],
               "default": "functions"
             },
             "allow": {
@@ -7047,9 +6758,7 @@
         "url": "https://eslint.org/docs/latest/rules/no-spaced-func"
       },
       "deprecated": true,
-      "replacedBy": [
-        "func-call-spacing"
-      ],
+      "replacedBy": ["func-call-spacing"],
       "fixable": "whitespace",
       "schema": [],
       "messages": {
@@ -7577,29 +7286,19 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "all",
-                "local"
-              ]
+              "enum": ["all", "local"]
             },
             {
               "type": "object",
               "properties": {
                 "vars": {
-                  "enum": [
-                    "all",
-                    "local"
-                  ]
+                  "enum": ["all", "local"]
                 },
                 "varsIgnorePattern": {
                   "type": "string"
                 },
                 "args": {
-                  "enum": [
-                    "all",
-                    "after-used",
-                    "none"
-                  ]
+                  "enum": ["all", "after-used", "none"]
                 },
                 "ignoreRestSiblings": {
                   "type": "boolean"
@@ -7608,10 +7307,7 @@
                   "type": "string"
                 },
                 "caughtErrors": {
-                  "enum": [
-                    "all",
-                    "none"
-                  ]
+                  "enum": ["all", "none"]
                 },
                 "caughtErrorsIgnorePattern": {
                   "type": "string"
@@ -7642,9 +7338,7 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "nofunc"
-              ]
+              "enum": ["nofunc"]
             },
             {
               "type": "object",
@@ -7785,6 +7479,7 @@
       "messages": {
         "unnecessaryEscape": "Unnecessary escape character: \\{{character}}.",
         "removeEscape": "Remove the `\\`. This maintains the current functionality.",
+        "removeEscapeDoNotKeepSemantics": "Remove the `\\` if it was inserted by mistake.",
         "escapeBackslash": "Replace the `\\` with `\\\\` to include the actual backslash character."
       },
       "schema": []
@@ -7898,10 +7593,7 @@
               }
             },
             "location": {
-              "enum": [
-                "start",
-                "anywhere"
-              ]
+              "enum": ["start", "anywhere"]
             },
             "decoration": {
               "type": "array",
@@ -7961,50 +7653,26 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "beside",
-            "below",
-            "any"
-          ]
+          "enum": ["beside", "below", "any"]
         },
         {
           "properties": {
             "overrides": {
               "properties": {
                 "if": {
-                  "enum": [
-                    "beside",
-                    "below",
-                    "any"
-                  ]
+                  "enum": ["beside", "below", "any"]
                 },
                 "else": {
-                  "enum": [
-                    "beside",
-                    "below",
-                    "any"
-                  ]
+                  "enum": ["beside", "below", "any"]
                 },
                 "while": {
-                  "enum": [
-                    "beside",
-                    "below",
-                    "any"
-                  ]
+                  "enum": ["beside", "below", "any"]
                 },
                 "do": {
-                  "enum": [
-                    "beside",
-                    "below",
-                    "any"
-                  ]
+                  "enum": ["beside", "below", "any"]
                 },
                 "for": {
-                  "enum": [
-                    "beside",
-                    "below",
-                    "any"
-                  ]
+                  "enum": ["beside", "below", "any"]
                 }
               },
               "additionalProperties": false
@@ -8034,10 +7702,7 @@
             {
               "oneOf": [
                 {
-                  "enum": [
-                    "always",
-                    "never"
-                  ]
+                  "enum": ["always", "never"]
                 },
                 {
                   "type": "object",
@@ -8064,10 +7729,7 @@
                 "ObjectExpression": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "always",
-                        "never"
-                      ]
+                      "enum": ["always", "never"]
                     },
                     {
                       "type": "object",
@@ -8091,10 +7753,7 @@
                 "ObjectPattern": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "always",
-                        "never"
-                      ]
+                      "enum": ["always", "never"]
                     },
                     {
                       "type": "object",
@@ -8118,10 +7777,7 @@
                 "ImportDeclaration": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "always",
-                        "never"
-                      ]
+                      "enum": ["always", "never"]
                     },
                     {
                       "type": "object",
@@ -8145,10 +7801,7 @@
                 "ExportDeclaration": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "always",
-                        "never"
-                      ]
+                      "enum": ["always", "never"]
                     },
                     {
                       "type": "object",
@@ -8195,10 +7848,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -8284,11 +7934,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always",
-                  "methods",
-                  "properties"
-                ]
+                "enum": ["always", "methods", "properties"]
               },
               {
                 "type": "object",
@@ -8307,10 +7953,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always",
-                  "methods"
-                ]
+                "enum": ["always", "methods"]
               },
               {
                 "type": "object",
@@ -8360,11 +8003,7 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "always",
-                "never",
-                "consecutive"
-              ]
+              "enum": ["always", "never", "consecutive"]
             },
             {
               "type": "object",
@@ -8373,25 +8012,13 @@
                   "type": "boolean"
                 },
                 "var": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "consecutive"
-                  ]
+                  "enum": ["always", "never", "consecutive"]
                 },
                 "let": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "consecutive"
-                  ]
+                  "enum": ["always", "never", "consecutive"]
                 },
                 "const": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "consecutive"
-                  ]
+                  "enum": ["always", "never", "consecutive"]
                 }
               },
               "additionalProperties": false
@@ -8400,18 +8027,10 @@
               "type": "object",
               "properties": {
                 "initialized": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "consecutive"
-                  ]
+                  "enum": ["always", "never", "consecutive"]
                 },
                 "uninitialized": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "consecutive"
-                  ]
+                  "enum": ["always", "never", "consecutive"]
                 }
               },
               "additionalProperties": false
@@ -8440,10 +8059,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "initializations"
-          ]
+          "enum": ["always", "initializations"]
         }
       ],
       "fixable": "whitespace",
@@ -8462,10 +8078,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "fixable": "code",
@@ -8485,12 +8098,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "after",
-            "before",
-            "none",
-            null
-          ]
+          "enum": ["after", "before", "none", null]
         },
         {
           "type": "object",
@@ -8498,12 +8106,7 @@
             "overrides": {
               "type": "object",
               "additionalProperties": {
-                "enum": [
-                  "after",
-                  "before",
-                  "none",
-                  "ignore"
-                ]
+                "enum": ["after", "before", "none", "ignore"]
               }
             }
           },
@@ -8532,31 +8135,19 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             {
               "type": "object",
               "properties": {
                 "blocks": {
-                  "enum": [
-                    "always",
-                    "never"
-                  ]
+                  "enum": ["always", "never"]
                 },
                 "switches": {
-                  "enum": [
-                    "always",
-                    "never"
-                  ]
+                  "enum": ["always", "never"]
                 },
                 "classes": {
-                  "enum": [
-                    "always",
-                    "never"
-                  ]
+                  "enum": ["always", "never"]
                 }
               },
               "additionalProperties": false,
@@ -8592,11 +8183,7 @@
       "schema": {
         "definitions": {
           "paddingType": {
-            "enum": [
-              "any",
-              "never",
-              "always"
-            ]
+            "enum": ["any", "never", "always"]
           },
           "statementType": {
             "anyOf": [
@@ -8707,11 +8294,7 @@
             }
           },
           "additionalProperties": false,
-          "required": [
-            "blankLine",
-            "prev",
-            "next"
-          ]
+          "required": ["blankLine", "prev", "next"]
         }
       },
       "messages": {
@@ -8764,10 +8347,7 @@
           "type": "object",
           "properties": {
             "destructuring": {
-              "enum": [
-                "any",
-                "all"
-              ],
+              "enum": ["any", "all"],
               "default": "any"
             },
             "ignoreReadBeforeAssign": {
@@ -9154,18 +8734,12 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "single",
-            "double",
-            "backtick"
-          ]
+          "enum": ["single", "double", "backtick"]
         },
         {
           "anyOf": [
             {
-              "enum": [
-                "avoid-escape"
-              ]
+              "enum": ["avoid-escape"]
             },
             {
               "type": "object",
@@ -9198,10 +8772,7 @@
       "hasSuggestions": true,
       "schema": [
         {
-          "enum": [
-            "always",
-            "as-needed"
-          ]
+          "enum": ["always", "as-needed"]
         }
       ],
       "messages": {
@@ -9308,7 +8879,7 @@
     "meta": {
       "type": "suggestion",
       "docs": {
-        "description": "Enforce the use of `u` flag on RegExp",
+        "description": "Enforce the use of `u` or `v` flag on RegExp",
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/require-unicode-regexp"
       },
@@ -9345,10 +8916,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -9372,19 +8940,13 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "never"
-                ]
+                "enum": ["never"]
               },
               {
                 "type": "object",
                 "properties": {
                   "beforeStatementContinuationChars": {
-                    "enum": [
-                      "always",
-                      "any",
-                      "never"
-                    ]
+                    "enum": ["always", "any", "never"]
                   }
                 },
                 "additionalProperties": false
@@ -9397,9 +8959,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always"
-                ]
+                "enum": ["always"]
               },
               {
                 "type": "object",
@@ -9468,10 +9028,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "last",
-            "first"
-          ]
+          "enum": ["last", "first"]
         }
       ],
       "fixable": "whitespace",
@@ -9499,12 +9056,7 @@
             "memberSyntaxSortOrder": {
               "type": "array",
               "items": {
-                "enum": [
-                  "none",
-                  "all",
-                  "multiple",
-                  "single"
-                ]
+                "enum": ["none", "all", "multiple", "single"]
               },
               "uniqueItems": true,
               "minItems": 4,
@@ -9544,10 +9096,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "asc",
-            "desc"
-          ]
+          "enum": ["asc", "desc"]
         },
         {
           "type": "object",
@@ -9617,34 +9166,19 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             {
               "type": "object",
               "properties": {
                 "keywords": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "off"
-                  ]
+                  "enum": ["always", "never", "off"]
                 },
                 "functions": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "off"
-                  ]
+                  "enum": ["always", "never", "off"]
                 },
                 "classes": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "off"
-                  ]
+                  "enum": ["always", "never", "off"]
                 }
               },
               "additionalProperties": false
@@ -9671,34 +9205,19 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             {
               "type": "object",
               "properties": {
                 "anonymous": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "ignore"
-                  ]
+                  "enum": ["always", "never", "ignore"]
                 },
                 "named": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "ignore"
-                  ]
+                  "enum": ["always", "never", "ignore"]
                 },
                 "asyncArrow": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "ignore"
-                  ]
+                  "enum": ["always", "never", "ignore"]
                 }
               },
               "additionalProperties": false
@@ -9723,10 +9242,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -9734,12 +9250,7 @@
             "exceptions": {
               "type": "array",
               "items": {
-                "enum": [
-                  "{}",
-                  "[]",
-                  "()",
-                  "empty"
-                ]
+                "enum": ["{}", "[]", "()", "empty"]
               },
               "uniqueItems": true
             }
@@ -9833,10 +9344,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -9917,12 +9425,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "never",
-            "global",
-            "function",
-            "safe"
-          ]
+          "enum": ["never", "global", "function", "safe"]
         }
       ],
       "fixable": "code",
@@ -9999,10 +9502,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -10024,10 +9524,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -10047,10 +9544,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -10215,11 +9709,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "outside",
-            "inside",
-            "any"
-          ]
+          "enum": ["outside", "inside", "any"]
         },
         {
           "type": "object",
@@ -10268,12 +9758,7 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "before",
-                "after",
-                "both",
-                "neither"
-              ]
+              "enum": ["before", "after", "both", "neither"]
             },
             {
               "type": "object",
@@ -10308,10 +9793,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",

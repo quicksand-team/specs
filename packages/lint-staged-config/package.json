@@ -1,0 +1,10 @@
+{
+  "private": false,
+  "name": "@quicksand/lint-staged-config",
+  "version": "1.0.0-alpha.4",
+  "type": "commonjs",
+  "main": "./index.js",
+  "dependencies": {
+    "lint-staged": "^14"
+  }
+}

@@ -15,11 +15,7 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "always",
-                "never",
-                "consistent"
-              ]
+              "enum": ["always", "never", "consistent"]
             },
             {
               "type": "object",
@@ -28,10 +24,7 @@
                   "type": "boolean"
                 },
                 "minItems": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
+                  "type": ["integer", "null"],
                   "minimum": 0
                 }
               },
@@ -62,10 +55,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -108,11 +98,7 @@
           "basicConfig": {
             "oneOf": [
               {
-                "enum": [
-                  "always",
-                  "never",
-                  "consistent"
-                ]
+                "enum": ["always", "never", "consistent"]
               },
               {
                 "type": "object",
@@ -121,10 +107,7 @@
                     "type": "boolean"
                   },
                   "minItems": {
-                    "type": [
-                      "integer",
-                      "null"
-                    ],
+                    "type": ["integer", "null"],
                     "minimum": 0
                   }
                 },
@@ -204,19 +187,13 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce attribute naming style on custom components in template",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/attribute-hyphenation.html"
       },
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -248,7 +225,11 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "mustBeHyphenated": "Attribute '{{text}}' must be hyphenated.",
+        "cannotBeHyphenated": "Attribute '{{text}}' can't be hyphenated."
+      }
     }
   },
   "attributes-order": {
@@ -256,10 +237,7 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce order of attributes",
-        "categories": [
-          "vue3-recommended",
-          "recommended"
-        ],
+        "categories": ["vue3-recommended", "recommended"],
         "url": "https://eslint.vuejs.org/rules/attributes-order.html"
       },
       "fixable": "code",
@@ -325,7 +303,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "expectedOrder": "Attribute \"{{currentNode}}\" should go before \"{{prevNode}}\"."
+      }
     }
   },
   "block-lang": {
@@ -381,6 +362,46 @@
       }
     }
   },
+  "block-order": {
+    "meta": {
+      "type": "suggestion",
+      "docs": {
+        "description": "enforce order of component top-level elements",
+        "url": "https://eslint.vuejs.org/rules/block-order.html"
+      },
+      "fixable": "code",
+      "schema": [
+        {
+          "type": "object",
+          "properties": {
+            "order": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "uniqueItems": true
+                  }
+                ]
+              },
+              "uniqueItems": true,
+              "additionalItems": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ],
+      "messages": {
+        "unexpected": "'<{{elementName}}{{elementAttributes}}>' should be above '<{{firstUnorderedName}}{{firstUnorderedAttributes}}>' on line {{line}}."
+      }
+    }
+  },
   "block-spacing": {
     "meta": {
       "type": "layout",
@@ -395,10 +416,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -420,20 +438,10 @@
           "type": "object",
           "properties": {
             "singleline": {
-              "enum": [
-                "always",
-                "never",
-                "consistent",
-                "ignore"
-              ]
+              "enum": ["always", "never", "consistent", "ignore"]
             },
             "multiline": {
-              "enum": [
-                "always",
-                "never",
-                "consistent",
-                "ignore"
-              ]
+              "enum": ["always", "never", "consistent", "ignore"]
             },
             "maxEmptyLines": {
               "type": "number",
@@ -446,20 +454,10 @@
                   "type": "object",
                   "properties": {
                     "singleline": {
-                      "enum": [
-                        "always",
-                        "never",
-                        "consistent",
-                        "ignore"
-                      ]
+                      "enum": ["always", "never", "consistent", "ignore"]
                     },
                     "multiline": {
-                      "enum": [
-                        "always",
-                        "never",
-                        "consistent",
-                        "ignore"
-                      ]
+                      "enum": ["always", "never", "consistent", "ignore"]
                     },
                     "maxEmptyLines": {
                       "type": "number",
@@ -477,7 +475,6 @@
       ],
       "messages": {
         "unexpectedOpeningLinebreak": "There should be no line break after '<{{tag}}>'.",
-        "unexpectedClosingLinebreak": "There should be no line break before '</{{tag}}>'.",
         "expectedOpeningLinebreak": "Expected {{expected}} after '<{{tag}}>', but {{actual}} found.",
         "expectedClosingLinebreak": "Expected {{expected}}  before '</{{tag}}>', but {{actual}} found.",
         "missingOpeningLinebreak": "A line break is required after '<{{tag}}>'.",
@@ -498,11 +495,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "1tbs",
-            "stroustrup",
-            "allman"
-          ]
+          "enum": ["1tbs", "stroustrup", "allman"]
         },
         {
           "type": "object",
@@ -554,10 +547,7 @@
               "default": false
             },
             "properties": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             "allow": {
               "type": "array",
@@ -594,12 +584,7 @@
       "schema": {
         "definitions": {
           "value": {
-            "enum": [
-              "always-multiline",
-              "always",
-              "never",
-              "only-multiline"
-            ]
+            "enum": ["always-multiline", "always", "never", "only-multiline"]
           },
           "valueWithIgnore": {
             "enum": [
@@ -698,10 +683,7 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "first",
-            "last"
-          ]
+          "enum": ["first", "last"]
         },
         {
           "type": "object",
@@ -728,9 +710,7 @@
       "type": "problem",
       "docs": {
         "description": "support comment-directives in `<template>`",
-        "categories": [
-          "base"
-        ],
+        "categories": ["base"],
         "url": "https://eslint.vuejs.org/rules/comment-directive.html"
       },
       "schema": [
@@ -795,21 +775,18 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce specific casing for component definition name",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/component-definition-name-casing.html"
       },
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "PascalCase",
-            "kebab-case"
-          ]
+          "enum": ["PascalCase", "kebab-case"]
         }
-      ]
+      ],
+      "messages": {
+        "incorrectCase": "Property name \"{{value}}\" is not {{caseType}}."
+      }
     }
   },
   "component-name-in-template-casing": {
@@ -822,10 +799,7 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "PascalCase",
-            "kebab-case"
-          ]
+          "enum": ["PascalCase", "kebab-case"]
         },
         {
           "type": "object",
@@ -851,7 +825,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "incorrectCase": "Component name \"{{name}}\" is not {{caseType}}."
+      }
     }
   },
   "component-options-name-casing": {
@@ -865,11 +842,7 @@
       "hasSuggestions": true,
       "schema": [
         {
-          "enum": [
-            "camelCase",
-            "kebab-case",
-            "PascalCase"
-          ]
+          "enum": ["camelCase", "kebab-case", "PascalCase"]
         }
       ],
       "messages": {
@@ -883,10 +856,7 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce order of component top-level elements",
-        "categories": [
-          "vue3-recommended",
-          "recommended"
-        ],
+        "categories": ["vue3-recommended", "recommended"],
         "url": "https://eslint.vuejs.org/rules/component-tags-order.html"
       },
       "fixable": "code",
@@ -919,7 +889,9 @@
       ],
       "messages": {
         "unexpected": "'<{{elementName}}{{elementAttributes}}>' should be above '<{{firstUnorderedName}}{{firstUnorderedAttributes}}>' on line {{line}}."
-      }
+      },
+      "deprecated": true,
+      "replacedBy": ["block-order"]
     }
   },
   "custom-event-name-casing": {
@@ -936,10 +908,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "kebab-case",
-                  "camelCase"
-                ]
+                "enum": ["kebab-case", "camelCase"]
               },
               {
                 "type": "object",
@@ -991,18 +960,15 @@
         "url": "https://eslint.vuejs.org/rules/define-emits-declaration.html"
       },
       "fixable": null,
+      "schema": [
+        {
+          "enum": ["type-based", "runtime"]
+        }
+      ],
       "messages": {
         "hasArg": "Use type-based declaration instead of runtime declaration.",
         "hasTypeArg": "Use runtime declaration instead of type-based declaration."
-      },
-      "schema": [
-        {
-          "enum": [
-            "type-based",
-            "runtime"
-          ]
-        }
-      ]
+      }
     }
   },
   "define-macros-order": {
@@ -1047,18 +1013,15 @@
         "url": "https://eslint.vuejs.org/rules/define-props-declaration.html"
       },
       "fixable": null,
+      "schema": [
+        {
+          "enum": ["type-based", "runtime"]
+        }
+      ],
       "messages": {
         "hasArg": "Use type-based declaration instead of runtime declaration.",
         "hasTypeArg": "Use runtime declaration instead of type-based declaration."
-      },
-      "schema": [
-        {
-          "enum": [
-            "type-based",
-            "runtime"
-          ]
-        }
-      ]
+      }
     }
   },
   "dot-location": {
@@ -1074,10 +1037,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "object",
-            "property"
-          ]
+          "enum": ["object", "property"]
         }
       ],
       "fixable": "code",
@@ -1138,19 +1098,13 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always"
-                ]
+                "enum": ["always"]
               },
               {
                 "type": "object",
                 "properties": {
                   "null": {
-                    "enum": [
-                      "always",
-                      "never",
-                      "ignore"
-                    ]
+                    "enum": ["always", "never", "ignore"]
                   }
                 },
                 "additionalProperties": false
@@ -1162,10 +1116,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "smart",
-                  "allow-null"
-                ]
+                "enum": ["smart", "allow-null"]
               }
             ],
             "additionalItems": false
@@ -1183,10 +1134,7 @@
       "type": "layout",
       "docs": {
         "description": "enforce the location of first attribute",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/first-attribute-linebreak.html"
       },
       "fixable": "whitespace",
@@ -1195,18 +1143,10 @@
           "type": "object",
           "properties": {
             "multiline": {
-              "enum": [
-                "below",
-                "beside",
-                "ignore"
-              ]
+              "enum": ["below", "beside", "ignore"]
             },
             "singleline": {
-              "enum": [
-                "below",
-                "beside",
-                "ignore"
-              ]
+              "enum": ["below", "beside", "ignore"]
             }
           },
           "additionalProperties": false
@@ -1236,9 +1176,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "never"
-                ]
+                "enum": ["never"]
               }
             ],
             "minItems": 0,
@@ -1248,9 +1186,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always"
-                ]
+                "enum": ["always"]
               },
               {
                 "type": "object",
@@ -1316,10 +1252,7 @@
       "type": "layout",
       "docs": {
         "description": "require or disallow a line break before tag's closing brackets",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/html-closing-bracket-newline.html"
       },
       "fixable": "whitespace",
@@ -1328,21 +1261,18 @@
           "type": "object",
           "properties": {
             "singleline": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             "multiline": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             }
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "expectedBeforeClosingBracket": "Expected {{expected}} before closing bracket, but {{actual}} found."
+      }
     }
   },
   "html-closing-bracket-spacing": {
@@ -1350,39 +1280,31 @@
       "type": "layout",
       "docs": {
         "description": "require or disallow a space before tag's closing brackets",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/html-closing-bracket-spacing.html"
       },
+      "fixable": "whitespace",
       "schema": [
         {
           "type": "object",
           "properties": {
             "startTag": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             "endTag": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             "selfClosingTag": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             }
           },
           "additionalProperties": false
         }
       ],
-      "fixable": "whitespace"
+      "messages": {
+        "missing": "Expected a space before '{{bracket}}', but not found.",
+        "unexpected": "Expected no space before '{{bracket}}', but found."
+      }
     }
   },
   "html-comment-content-newline": {
@@ -1397,27 +1319,16 @@
         {
           "anyOf": [
             {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             {
               "type": "object",
               "properties": {
                 "singleline": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "ignore"
-                  ]
+                  "enum": ["always", "never", "ignore"]
                 },
                 "multiline": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "ignore"
-                  ]
+                  "enum": ["always", "never", "ignore"]
                 }
               },
               "additionalProperties": false
@@ -1457,10 +1368,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -1501,9 +1409,7 @@
               "minimum": 0
             },
             {
-              "enum": [
-                "tab"
-              ]
+              "enum": ["tab"]
             }
           ]
         }
@@ -1522,14 +1428,14 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce end tag style",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/html-end-tags.html"
       },
       "fixable": "code",
-      "schema": []
+      "schema": [],
+      "messages": {
+        "missingEndTag": "'<{{name}}>' should have end tag."
+      }
     }
   },
   "html-indent": {
@@ -1537,10 +1443,7 @@
       "type": "layout",
       "docs": {
         "description": "enforce consistent indentation in `<template>`",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/html-indent.html"
       },
       "fixable": "whitespace",
@@ -1552,9 +1455,7 @@
               "minimum": 1
             },
             {
-              "enum": [
-                "tab"
-              ]
+              "enum": ["tab"]
             }
           ]
         },
@@ -1637,19 +1538,13 @@
       "type": "layout",
       "docs": {
         "description": "enforce quotes style of HTML attributes",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/html-quotes.html"
       },
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "double",
-            "single"
-          ]
+          "enum": ["double", "single"]
         },
         {
           "type": "object",
@@ -1660,7 +1555,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "expected": "Expected to be enclosed by {{kind}}."
+      }
     }
   },
   "html-self-closing": {
@@ -1668,21 +1566,14 @@
       "type": "layout",
       "docs": {
         "description": "enforce self-closing style",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/html-self-closing.html"
       },
       "fixable": "code",
       "schema": {
         "definitions": {
           "optionValue": {
-            "enum": [
-              "always",
-              "never",
-              "any"
-            ]
+            "enum": ["always", "never", "any"]
           }
         },
         "type": "array",
@@ -1716,6 +1607,10 @@
           }
         ],
         "maxItems": 1
+      },
+      "messages": {
+        "requireSelfClosing": "Require self-closing on {{elementType}} (<{{name}}>).",
+        "disallowSelfClosing": "Disallow self-closing on {{elementType}} (<{{name}}/>)."
       }
     }
   },
@@ -1724,9 +1619,7 @@
       "type": "problem",
       "docs": {
         "description": "prevent variables used in JSX to be marked as unused",
-        "categories": [
-          "base"
-        ],
+        "categories": ["base"],
         "url": "https://eslint.vuejs.org/rules/jsx-uses-vars.html"
       },
       "schema": []
@@ -1753,25 +1646,16 @@
                 "align": {
                   "anyOf": [
                     {
-                      "enum": [
-                        "colon",
-                        "value"
-                      ]
+                      "enum": ["colon", "value"]
                     },
                     {
                       "type": "object",
                       "properties": {
                         "mode": {
-                          "enum": [
-                            "strict",
-                            "minimum"
-                          ]
+                          "enum": ["strict", "minimum"]
                         },
                         "on": {
-                          "enum": [
-                            "colon",
-                            "value"
-                          ]
+                          "enum": ["colon", "value"]
                         },
                         "beforeColon": {
                           "type": "boolean"
@@ -1785,10 +1669,7 @@
                   ]
                 },
                 "mode": {
-                  "enum": [
-                    "strict",
-                    "minimum"
-                  ]
+                  "enum": ["strict", "minimum"]
                 },
                 "beforeColon": {
                   "type": "boolean"
@@ -1806,10 +1687,7 @@
                   "type": "object",
                   "properties": {
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -1826,25 +1704,16 @@
                     "align": {
                       "anyOf": [
                         {
-                          "enum": [
-                            "colon",
-                            "value"
-                          ]
+                          "enum": ["colon", "value"]
                         },
                         {
                           "type": "object",
                           "properties": {
                             "mode": {
-                              "enum": [
-                                "strict",
-                                "minimum"
-                              ]
+                              "enum": ["strict", "minimum"]
                             },
                             "on": {
-                              "enum": [
-                                "colon",
-                                "value"
-                              ]
+                              "enum": ["colon", "value"]
                             },
                             "beforeColon": {
                               "type": "boolean"
@@ -1858,10 +1727,7 @@
                       ]
                     },
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -1882,10 +1748,7 @@
                   "type": "object",
                   "properties": {
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -1900,10 +1763,7 @@
                   "type": "object",
                   "properties": {
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -1918,16 +1778,10 @@
                   "type": "object",
                   "properties": {
                     "mode": {
-                      "enum": [
-                        "strict",
-                        "minimum"
-                      ]
+                      "enum": ["strict", "minimum"]
                     },
                     "on": {
-                      "enum": [
-                        "colon",
-                        "value"
-                      ]
+                      "enum": ["colon", "value"]
                     },
                     "beforeColon": {
                       "type": "boolean"
@@ -2812,13 +2666,13 @@
   },
   "match-component-file-name": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "require component name property to match its file name",
         "url": "https://eslint.vuejs.org/rules/match-component-file-name.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": [
         {
           "type": "object",
@@ -2837,18 +2691,21 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "shouldMatchFileName": "Component name `{{name}}` should match file name `{{filename}}`."
+      }
     }
   },
   "match-component-import-name": {
     "meta": {
       "type": "problem",
-      "schema": [],
       "docs": {
         "description": "require the registered component name to match the imported component name",
         "url": "https://eslint.vuejs.org/rules/match-component-import-name.html"
       },
       "fixable": null,
+      "schema": [],
       "messages": {
         "unexpected": "Component alias {{importedName}} should be one of: {{expectedName}}."
       }
@@ -2859,10 +2716,7 @@
       "type": "layout",
       "docs": {
         "description": "enforce the maximum number of attributes per line",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/max-attributes-per-line.html"
       },
       "fixable": "whitespace",
@@ -2909,7 +2763,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "shouldBeOnNewLine": "'{{name}}' should be on a new line."
+      }
     }
   },
   "max-len": {
@@ -3134,10 +2991,7 @@
       "type": "suggestion",
       "docs": {
         "description": "require component names to be always multi-word",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/multi-word-component-names.html"
       },
       "schema": [
@@ -3166,10 +3020,7 @@
       "type": "layout",
       "docs": {
         "description": "require a line break before and after the contents of a multiline element",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/multiline-html-element-content-newline.html"
       },
       "fixable": "whitespace",
@@ -3214,11 +3065,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "always-multiline",
-            "never"
-          ]
+          "enum": ["always", "always-multiline", "never"]
         }
       ],
       "messages": {
@@ -3235,21 +3082,21 @@
       "type": "layout",
       "docs": {
         "description": "enforce unified spacing in mustache interpolations",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/mustache-interpolation-spacing.html"
       },
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
-      ]
+      ],
+      "messages": {
+        "expectedSpaceAfter": "Expected 1 space after '{{', but not found.",
+        "expectedSpaceBefore": "Expected 1 space before '}}', but not found.",
+        "unexpectedSpaceAfter": "Expected no space after '{{', but found.",
+        "unexpectedSpaceBefore": "Expected no space before '}}', but found."
+      }
     }
   },
   "new-line-between-multi-line-property": {
@@ -3271,7 +3118,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "missingEmptyLine": "Enforce new lines between multi-line properties in Vue components."
+      }
     }
   },
   "next-tick-style": {
@@ -3284,12 +3134,13 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "promise",
-            "callback"
-          ]
+          "enum": ["promise", "callback"]
         }
-      ]
+      ],
+      "messages": {
+        "usePromise": "Use the Promise returned by `nextTick` instead of passing a callback function.",
+        "useCallback": "Pass a callback function to `nextTick` instead of using the returned Promise."
+      }
     }
   },
   "no-arrow-functions-in-watch": {
@@ -3297,14 +3148,14 @@
       "type": "problem",
       "docs": {
         "description": "disallow using arrow functions to define watcher",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-arrow-functions-in-watch.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "noArrowFunctionsInWatch": "You should not use an arrow function to define a watcher."
+      }
     }
   },
   "no-async-in-computed-properties": {
@@ -3312,14 +3163,15 @@
       "type": "problem",
       "docs": {
         "description": "disallow asynchronous actions in computed properties",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-async-in-computed-properties.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "unexpectedInFunction": "Unexpected {{expressionName}} in computed function.",
+        "unexpectedInProperty": "Unexpected {{expressionName}} in \"{{propertyName}}\" computed property."
+      }
     }
   },
   "no-bare-strings-in-template": {
@@ -3381,27 +3233,25 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "default-false",
-            "no-default"
-          ]
+          "enum": ["default-false", "no-default"]
         }
-      ]
+      ],
+      "messages": {
+        "noBooleanDefault": "Boolean prop should not set a default (Vue defaults it to false).",
+        "defaultFalse": "Boolean prop should only be defaulted to false."
+      }
     }
   },
   "no-child-content": {
     "meta": {
-      "hasSuggestions": true,
       "type": "problem",
       "docs": {
         "description": "disallow element's child contents which would be overwritten by a directive like `v-html` or `v-text`",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-child-content.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": [
         {
           "type": "object",
@@ -3416,11 +3266,13 @@
               }
             }
           },
-          "required": [
-            "additionalDirectives"
-          ]
+          "required": ["additionalDirectives"]
         }
-      ]
+      ],
+      "messages": {
+        "disallowedChildContent": "Child content is disallowed because it will be overwritten by the v-{{ directiveName }} directive.",
+        "removeChildContent": "Remove child content."
+      }
     }
   },
   "no-computed-properties-in-data": {
@@ -3428,10 +3280,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow accessing computed properties in `data`.",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-computed-properties-in-data.html"
       },
       "fixable": null,
@@ -3506,9 +3355,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow custom modifiers on v-model used on the component",
-        "categories": [
-          "essential"
-        ],
+        "categories": ["essential"],
         "url": "https://eslint.vuejs.org/rules/no-custom-modifiers-on-v-model.html"
       },
       "fixable": null,
@@ -3523,9 +3370,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated object declaration on data (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-data-object-declaration.html"
       },
       "fixable": "code",
@@ -3540,9 +3385,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated `destroyed` and `beforeDestroy` lifecycle hooks (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-destroyed-lifecycle.html"
       },
       "fixable": "code",
@@ -3558,9 +3401,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated `$listeners` (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-dollar-listeners-api.html"
       },
       "fixable": null,
@@ -3575,9 +3416,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated `$scopedSlots` (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-dollar-scopedslots-api.html"
       },
       "fixable": "code",
@@ -3592,9 +3431,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated events api (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-events-api.html"
       },
       "fixable": null,
@@ -3609,9 +3446,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated filters syntax (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-filter.html"
       },
       "fixable": null,
@@ -3626,9 +3461,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated the `functional` template (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-functional-template.html"
       },
       "fixable": null,
@@ -3643,9 +3476,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated the `is` attribute on HTML elements (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-html-element-is.html"
       },
       "fixable": null,
@@ -3660,9 +3491,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated `inline-template` attribute (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-inline-template.html"
       },
       "fixable": null,
@@ -3672,14 +3501,40 @@
       }
     }
   },
+  "no-deprecated-model-definition": {
+    "meta": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow deprecated `model` definition (in Vue.js 3.0.0+)",
+        "url": "https://eslint.vuejs.org/rules/no-deprecated-model-definition.html"
+      },
+      "fixable": null,
+      "hasSuggestions": true,
+      "schema": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "allowVue3Compat": {
+              "type": "boolean"
+            }
+          }
+        }
+      ],
+      "messages": {
+        "deprecatedModel": "`model` definition is deprecated.",
+        "vue3Compat": "`model` definition is deprecated. You may use the Vue 3-compatible `modelValue`/`update:modelValue` though.",
+        "changeToModelValue": "Change to `modelValue`/`update:modelValue`.",
+        "changeToKebabModelValue": "Change to `model-value`/`update:model-value`."
+      }
+    }
+  },
   "no-deprecated-props-default-this": {
     "meta": {
       "type": "problem",
       "docs": {
         "description": "disallow deprecated `this` access in props default function (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-props-default-this.html"
       },
       "fixable": null,
@@ -3694,9 +3549,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated `tag` property on `RouterLink` (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-router-link-tag-prop.html"
       },
       "fixable": null,
@@ -3726,9 +3579,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow deprecated `scope` attribute (in Vue.js 2.5.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-scope-attribute.html"
       },
       "fixable": "code",
@@ -3743,9 +3594,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow deprecated `slot` attribute (in Vue.js 2.6.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-slot-attribute.html"
       },
       "fixable": "code",
@@ -3760,9 +3609,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow deprecated `slot-scope` attribute (in Vue.js 2.6.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-slot-scope-attribute.html"
       },
       "fixable": "code",
@@ -3777,9 +3624,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow use of deprecated `.sync` modifier on `v-bind` directive (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-v-bind-sync.html"
       },
       "fixable": "code",
@@ -3794,9 +3639,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow deprecated `v-is` directive (in Vue.js 3.1.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-v-is.html"
       },
       "fixable": "code",
@@ -3811,9 +3654,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated `.native` modifiers (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-v-on-native-modifier.html"
       },
       "fixable": null,
@@ -3828,9 +3669,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated number (keycode) modifiers (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-v-on-number-modifiers.html"
       },
       "fixable": "code",
@@ -3845,9 +3684,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated `Vue.config.keyCodes` (in Vue.js 3.0.0+)",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-deprecated-vue-config-keycodes.html"
       },
       "fixable": null,
@@ -3862,10 +3699,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow duplication of field names",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-dupe-keys.html"
       },
       "fixable": null,
@@ -3879,7 +3713,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "duplicateKey": "Duplicate key '{{name}}'. May cause name collision in script or template tag."
+      }
     }
   },
   "no-dupe-v-else-if": {
@@ -3887,10 +3724,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow duplicate conditions in `v-if` / `v-else-if` chains",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-dupe-v-else-if.html"
       },
       "fixable": null,
@@ -3909,7 +3743,10 @@
         "url": "https://eslint.vuejs.org/rules/no-duplicate-attr-inheritance.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "noDuplicateAttrInheritance": "Set \"inheritAttrs\" to false."
+      }
     }
   },
   "no-duplicate-attributes": {
@@ -3917,10 +3754,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow duplication of attributes",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-duplicate-attributes.html"
       },
       "fixable": null,
@@ -3937,7 +3771,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "duplicateAttribute": "Duplicate attribute '{{name}}'."
+      }
     }
   },
   "no-empty-component-block": {
@@ -3965,7 +3802,18 @@
         "extensionRule": true,
         "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-empty-pattern"
       },
-      "schema": [],
+      "schema": [
+        {
+          "type": "object",
+          "properties": {
+            "allowObjectPatternsAsParameters": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ],
       "messages": {
         "unexpected": "Unexpected empty {{type}} pattern."
       }
@@ -3976,10 +3824,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow `export` in `<script setup>`",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-export-in-script-setup.html"
       },
       "fixable": null,
@@ -3994,9 +3839,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow asynchronously registered `expose`",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-expose-after-await.html"
       },
       "fixable": null,
@@ -4024,9 +3867,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "functions"
-                ]
+                "enum": ["functions"]
               }
             ],
             "minItems": 0,
@@ -4036,14 +3877,15 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "all"
-                ]
+                "enum": ["all"]
               },
               {
                 "type": "object",
                 "properties": {
                   "conditionalAssign": {
+                    "type": "boolean"
+                  },
+                  "ternaryOperandBinaryExpressions": {
                     "type": "boolean"
                   },
                   "nestedBinaryExpressions": {
@@ -4053,12 +3895,7 @@
                     "type": "boolean"
                   },
                   "ignoreJSX": {
-                    "enum": [
-                      "none",
-                      "all",
-                      "single-line",
-                      "multi-line"
-                    ]
+                    "enum": ["none", "all", "single-line", "multi-line"]
                   },
                   "enforceForArrowConditionals": {
                     "type": "boolean"
@@ -4098,10 +3935,11 @@
       },
       "fixable": null,
       "schema": [],
+      "messages": {
+        "invalidKey": "Invalid key '{{name}}' in model option."
+      },
       "deprecated": true,
-      "replacedBy": [
-        "valid-model-definition"
-      ]
+      "replacedBy": ["valid-model-definition"]
     }
   },
   "no-irregular-whitespace": {
@@ -4155,9 +3993,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow asynchronously registered lifecycle hooks",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-lifecycle-after-await.html"
       },
       "fixable": null,
@@ -4172,10 +4008,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow unnecessary `<template>`",
-        "categories": [
-          "vue3-recommended",
-          "recommended"
-        ],
+        "categories": ["vue3-recommended", "recommended"],
         "url": "https://eslint.vuejs.org/rules/no-lone-template.html"
       },
       "fixable": null,
@@ -4217,10 +4050,7 @@
       "type": "layout",
       "docs": {
         "description": "disallow multiple spaces",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/no-multi-spaces.html"
       },
       "fixable": "whitespace",
@@ -4234,7 +4064,11 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "multipleSpaces": "Multiple spaces found before '{{displayValue}}'.",
+        "useLatestParser": "Use the latest vue-eslint-parser. See also https://eslint.vuejs.org/user-guide/#what-is-the-use-the-latest-vue-eslint-parser-error."
+      }
     }
   },
   "no-multiple-objects-in-class": {
@@ -4256,10 +4090,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow to pass multiple arguments to scoped slots",
-        "categories": [
-          "vue3-recommended",
-          "recommended"
-        ],
+        "categories": ["vue3-recommended", "recommended"],
         "url": "https://eslint.vuejs.org/rules/no-multiple-slot-args.html"
       },
       "fixable": null,
@@ -4275,13 +4106,17 @@
       "type": "problem",
       "docs": {
         "description": "disallow adding multiple root nodes to the template",
-        "categories": [
-          "essential"
-        ],
+        "categories": ["essential"],
         "url": "https://eslint.vuejs.org/rules/no-multiple-template-root.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "multipleRoot": "The template root requires exactly one element.",
+        "textRoot": "The template root requires an element rather than texts.",
+        "disallowedElement": "The template root disallows '<{{name}}>' elements.",
+        "disallowedDirective": "The template root disallows 'v-for' directives."
+      }
     }
   },
   "no-mutating-props": {
@@ -4289,10 +4124,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow mutation of component props",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-mutating-props.html"
       },
       "fixable": null,
@@ -4306,7 +4138,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "unexpectedMutation": "Unexpected mutation of \"{{key}}\" prop."
+      }
     }
   },
   "no-parsing-error": {
@@ -4314,10 +4149,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow parsing errors in `<template>`",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-parsing-error.html"
       },
       "fixable": null,
@@ -4436,12 +4268,14 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "parsingError": "Parsing error: {{message}}."
+      }
     }
   },
   "no-potential-component-option-typo": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "disallow a potential typo in your component property",
@@ -4449,6 +4283,7 @@
         "url": "https://eslint.vuejs.org/rules/no-potential-component-option-typo.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": [
         {
           "type": "object",
@@ -4457,12 +4292,7 @@
               "type": "array",
               "items": {
                 "type": "string",
-                "enum": [
-                  "all",
-                  "vue",
-                  "vue-router",
-                  "nuxt"
-                ]
+                "enum": ["all", "vue", "vue-router", "nuxt"]
               },
               "uniqueItems": true,
               "minItems": 0
@@ -4482,7 +4312,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "potentialTypo": "'{{name}}' may be a typo, which is similar to option [{{option}}]."
+      }
     }
   },
   "no-ref-as-operand": {
@@ -4490,10 +4323,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow use of value wrapped by `ref()` (Composition API) as an operand",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-ref-as-operand.html"
       },
       "fixable": "code",
@@ -4507,8 +4337,25 @@
     "meta": {
       "type": "problem",
       "docs": {
-        "description": "disallow destructuring of ref objects that can lead to loss of reactivity",
+        "description": "disallow usages of ref objects that can lead to loss of reactivity",
         "url": "https://eslint.vuejs.org/rules/no-ref-object-destructure.html"
+      },
+      "fixable": null,
+      "schema": [],
+      "messages": {
+        "getValueInSameScope": "Getting a value from the ref object in the same scope will cause the value to lose reactivity.",
+        "getReactiveVariableInSameScope": "Getting a reactive variable in the same scope will cause the value to lose reactivity."
+      },
+      "deprecated": true,
+      "replacedBy": ["no-ref-object-reactivity-loss"]
+    }
+  },
+  "no-ref-object-reactivity-loss": {
+    "meta": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usages of ref objects that can lead to loss of reactivity",
+        "url": "https://eslint.vuejs.org/rules/no-ref-object-reactivity-loss.html"
       },
       "fixable": null,
       "schema": [],
@@ -4520,13 +4367,13 @@
   },
   "no-required-prop-with-default": {
     "meta": {
-      "hasSuggestions": true,
       "type": "problem",
       "docs": {
         "description": "enforce props with default values to be optional",
         "url": "https://eslint.vuejs.org/rules/no-required-prop-with-default.html"
       },
       "fixable": "code",
+      "hasSuggestions": true,
       "schema": [
         {
           "type": "object",
@@ -4549,10 +4396,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow the use of reserved names in component definitions",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-reserved-component-names.html"
       },
       "fixable": null,
@@ -4583,10 +4427,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow overwriting reserved keys",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-reserved-keys.html"
       },
       "fixable": null,
@@ -4615,10 +4456,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow reserved names in props",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-reserved-props.html",
         "defaultOptions": {
           "vue2": [
@@ -4634,10 +4472,7 @@
           "type": "object",
           "properties": {
             "vueVersion": {
-              "enum": [
-                2,
-                3
-              ]
+              "enum": [2, 3]
             }
           },
           "additionalProperties": false
@@ -4674,9 +4509,7 @@
                   "minLength": 1
                 }
               },
-              "required": [
-                "element"
-              ],
+              "required": ["element"],
               "additionalProperties": false
             }
           ]
@@ -4723,9 +4556,7 @@
               "minLength": 1
             }
           },
-          "required": [
-            "module"
-          ],
+          "required": ["module"],
           "additionalProperties": false
         },
         "uniqueItems": true,
@@ -4744,26 +4575,26 @@
         "url": "https://eslint.vuejs.org/rules/no-restricted-class.html"
       },
       "fixable": null,
-      "messages": {
-        "forbiddenClass": "'{{class}}' class is not allowed."
-      },
       "schema": {
         "type": "array",
         "items": {
           "type": "string"
         }
+      },
+      "messages": {
+        "forbiddenClass": "'{{class}}' class is not allowed."
       }
     }
   },
   "no-restricted-component-names": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "disallow specific component names",
         "url": "https://eslint.vuejs.org/rules/no-restricted-component-names.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": {
         "type": "array",
         "items": {
@@ -4785,9 +4616,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "name"
-              ],
+              "required": ["name"],
               "additionalProperties": false
             }
           ]
@@ -4843,9 +4672,7 @@
                   "minLength": 1
                 }
               },
-              "required": [
-                "name"
-              ],
+              "required": ["name"],
               "additionalProperties": false
             }
           ]
@@ -4860,21 +4687,19 @@
   },
   "no-restricted-custom-event": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "disallow specific custom event",
         "url": "https://eslint.vuejs.org/rules/no-restricted-custom-event.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": {
         "type": "array",
         "items": {
           "oneOf": [
             {
-              "type": [
-                "string"
-              ]
+              "type": ["string"]
             },
             {
               "type": "object",
@@ -4890,9 +4715,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "event"
-              ],
+              "required": ["event"],
               "additionalProperties": false
             }
           ]
@@ -4932,35 +4755,35 @@
                   "minLength": 1
                 }
               },
-              "required": [
-                "element"
-              ],
+              "required": ["element"],
               "additionalProperties": false
             }
           ]
         },
         "uniqueItems": true,
         "minItems": 0
+      },
+      "messages": {
+        "forbiddenElement": "Unexpected use of forbidden HTML element {{name}}.",
+        "customMessage": "{{message}}"
       }
     }
   },
   "no-restricted-props": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "disallow specific props",
         "url": "https://eslint.vuejs.org/rules/no-restricted-props.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": {
         "type": "array",
         "items": {
           "oneOf": [
             {
-              "type": [
-                "string"
-              ]
+              "type": ["string"]
             },
             {
               "type": "object",
@@ -4976,9 +4799,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "name"
-              ],
+              "required": ["name"],
               "additionalProperties": false
             }
           ]
@@ -5019,9 +4840,7 @@
                       "type": "string"
                     },
                     {
-                      "enum": [
-                        true
-                      ]
+                      "enum": [true]
                     }
                   ]
                 },
@@ -5033,9 +4852,7 @@
                   "minLength": 1
                 }
               },
-              "required": [
-                "key"
-              ],
+              "required": ["key"],
               "additionalProperties": false
             }
           ]
@@ -5076,9 +4893,7 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "selector"
-              ],
+              "required": ["selector"],
               "additionalProperties": false
             }
           ]
@@ -5104,30 +4919,19 @@
         "items": {
           "oneOf": [
             {
-              "type": [
-                "string",
-                "null"
-              ]
+              "type": ["string", "null"]
             },
             {
               "type": "object",
               "properties": {
                 "argument": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
+                  "type": ["string", "null"]
                 },
                 "modifiers": {
                   "type": "array",
                   "items": {
                     "type": "string",
-                    "enum": [
-                      "prop",
-                      "camel",
-                      "sync",
-                      "attr"
-                    ]
+                    "enum": ["prop", "camel", "sync", "attr"]
                   },
                   "uniqueItems": true
                 },
@@ -5139,9 +4943,7 @@
                   "minLength": 1
                 }
               },
-              "required": [
-                "argument"
-              ],
+              "required": ["argument"],
               "additionalProperties": false
             }
           ]
@@ -5162,19 +4964,35 @@
         "url": "https://eslint.vuejs.org/rules/no-root-v-if.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "noRootVIf": "`v-if` should not be used on root element without `v-else`."
+      }
     }
   },
   "no-setup-props-destructure": {
     "meta": {
       "type": "suggestion",
       "docs": {
-        "description": "disallow destructuring of `props` passed to `setup`",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "description": "disallow usages that lose the reactivity of `props` passed to `setup`",
         "url": "https://eslint.vuejs.org/rules/no-setup-props-destructure.html"
+      },
+      "fixable": null,
+      "schema": [],
+      "messages": {
+        "destructuring": "Destructuring the `props` will cause the value to lose reactivity.",
+        "getProperty": "Getting a value from the `props` in root scope of `{{scopeName}}` will cause the value to lose reactivity."
+      },
+      "deprecated": true,
+      "replacedBy": ["no-setup-props-reactivity-loss"]
+    }
+  },
+  "no-setup-props-reactivity-loss": {
+    "meta": {
+      "type": "suggestion",
+      "docs": {
+        "description": "disallow usages that lose the reactivity of `props` passed to `setup`",
+        "url": "https://eslint.vuejs.org/rules/no-setup-props-reactivity-loss.html"
       },
       "fixable": null,
       "schema": [],
@@ -5189,14 +5007,14 @@
       "type": "problem",
       "docs": {
         "description": "enforce component's data property to be a function",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-shared-component-data.html"
       },
       "fixable": "code",
-      "schema": []
+      "schema": [],
+      "messages": {
+        "dataPropertyMustBeFunction": "`data` property in component must be a function."
+      }
     }
   },
   "no-side-effects-in-computed-properties": {
@@ -5204,14 +5022,15 @@
       "type": "problem",
       "docs": {
         "description": "disallow side effects in computed properties",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-side-effects-in-computed-properties.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "unexpectedSideEffectInFunction": "Unexpected side effect in computed function.",
+        "unexpectedSideEffectInProperty": "Unexpected side effect in \"{{key}}\" computed property."
+      }
     }
   },
   "no-spaces-around-equal-signs-in-attribute": {
@@ -5219,14 +5038,14 @@
       "type": "layout",
       "docs": {
         "description": "disallow spaces around equal signs in attribute",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/no-spaces-around-equal-signs-in-attribute.html"
       },
       "fixable": "whitespace",
-      "schema": []
+      "schema": [],
+      "messages": {
+        "unexpectedSpaces": "Unexpected spaces found around equal signs."
+      }
     }
   },
   "no-sparse-arrays": {
@@ -5276,10 +5095,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow `key` attribute on `<template>`",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-template-key.html"
       },
       "fixable": null,
@@ -5294,14 +5110,14 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow variable declarations from shadowing variables declared in the outer scope",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/no-template-shadow.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "alreadyDeclaredInUpperScope": "Variable '{{name}}' is already declared in the upper scope."
+      }
     }
   },
   "no-template-target-blank": {
@@ -5320,15 +5136,15 @@
               "type": "boolean"
             },
             "enforceDynamicLinks": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             }
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "missingRel": "Using target=\"_blank\" without rel=\"noopener noreferrer\" is a security risk."
+      }
     }
   },
   "no-textarea-mustache": {
@@ -5336,14 +5152,14 @@
       "type": "problem",
       "docs": {
         "description": "disallow mustaches in `<textarea>`",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-textarea-mustache.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "unexpected": "Unexpected mustache. Use 'v-model' instead."
+      }
     }
   },
   "no-this-in-before-route-enter": {
@@ -5479,10 +5295,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow registering components that are not used inside templates",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-unused-components.html"
       },
       "fixable": null,
@@ -5496,7 +5309,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "unused": "The \"{{name}}\" component has been registered but not used."
+      }
     }
   },
   "no-unused-properties": {
@@ -5535,10 +5351,7 @@
             "unreferencedOptions": {
               "type": "array",
               "items": {
-                "enum": [
-                  "unknownMemberAsUnreferenced",
-                  "returnAsUnreferenced"
-                ]
+                "enum": ["unknownMemberAsUnreferenced", "returnAsUnreferenced"]
               },
               "additionalItems": false,
               "uniqueItems": true
@@ -5568,17 +5381,14 @@
   },
   "no-unused-vars": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "disallow unused variable definitions of v-for directives or scope attributes",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-unused-vars.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": [
         {
           "type": "object",
@@ -5589,7 +5399,11 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "unusedVariable": "'{{name}}' is defined but never used.",
+        "replaceWithUnderscore": "Replace `{{name}}` with `_{{name}}` to ignore the unused variable."
+      }
     }
   },
   "no-use-computed-property-like-method": {
@@ -5597,10 +5411,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow use computed property like method",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-use-computed-property-like-method.html"
       },
       "fixable": null,
@@ -5610,15 +5421,27 @@
       }
     }
   },
+  "no-use-v-else-with-v-for": {
+    "meta": {
+      "type": "suggestion",
+      "docs": {
+        "description": "disallow using `v-else-if`/`v-else` on the same element as `v-for`",
+        "categories": null,
+        "url": "https://eslint.vuejs.org/rules/no-use-v-else-with-v-for.html"
+      },
+      "fixable": null,
+      "schema": [],
+      "messages": {
+        "unexpectedDirectiveWithVFor": "Unexpected `{{ directiveName }}` and `v-for` on the same element. Move `{{ directiveName }}` to a wrapper element instead."
+      }
+    }
+  },
   "no-use-v-if-with-v-for": {
     "meta": {
       "type": "suggestion",
       "docs": {
-        "description": "disallow use v-if on the same element as v-for",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "description": "disallow using `v-if` on the same element as `v-for`",
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-use-v-if-with-v-for.html"
       },
       "fixable": null,
@@ -5632,7 +5455,11 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "movedToWrapper": "This 'v-if' should be moved to the wrapper element.",
+        "shouldUseComputed": "The '{{iteratorName}}' {{kind}} inside 'v-for' directive should be replaced with a computed property that returns filtered array instead. You should not mix 'v-for' with 'v-if'."
+      }
     }
   },
   "no-useless-concat": {
@@ -5654,14 +5481,12 @@
   },
   "no-useless-mustaches": {
     "meta": {
+      "type": "suggestion",
       "docs": {
         "description": "disallow unnecessary mustache interpolations",
         "url": "https://eslint.vuejs.org/rules/no-useless-mustaches.html"
       },
       "fixable": "code",
-      "messages": {
-        "unexpected": "Unexpected mustache interpolation with a string literal value."
-      },
       "schema": [
         {
           "type": "object",
@@ -5676,7 +5501,9 @@
           "additionalProperties": false
         }
       ],
-      "type": "suggestion"
+      "messages": {
+        "unexpected": "Unexpected mustache interpolation with a string literal value."
+      }
     }
   },
   "no-useless-template-attributes": {
@@ -5684,10 +5511,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow useless attribute on `<template>`",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/no-useless-template-attributes.html"
       },
       "fixable": null,
@@ -5700,14 +5524,12 @@
   },
   "no-useless-v-bind": {
     "meta": {
+      "type": "suggestion",
       "docs": {
         "description": "disallow unnecessary `v-bind` directives",
         "url": "https://eslint.vuejs.org/rules/no-useless-v-bind.html"
       },
       "fixable": "code",
-      "messages": {
-        "unexpected": "Unexpected `v-bind` with a string literal value."
-      },
       "schema": [
         {
           "type": "object",
@@ -5722,7 +5544,9 @@
           "additionalProperties": false
         }
       ],
-      "type": "suggestion"
+      "messages": {
+        "unexpected": "Unexpected `v-bind` with a string literal value."
+      }
     }
   },
   "no-v-for-template-key-on-child": {
@@ -5730,9 +5554,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow key of `<template v-for>` placed on child elements",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-v-for-template-key-on-child.html"
       },
       "fixable": null,
@@ -5747,9 +5569,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow `key` attribute on `<template v-for>`",
-        "categories": [
-          "essential"
-        ],
+        "categories": ["essential"],
         "url": "https://eslint.vuejs.org/rules/no-v-for-template-key.html"
       },
       "fixable": null,
@@ -5764,14 +5584,14 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow use of v-html to prevent XSS attack",
-        "categories": [
-          "vue3-recommended",
-          "recommended"
-        ],
+        "categories": ["vue3-recommended", "recommended"],
         "url": "https://eslint.vuejs.org/rules/no-v-html.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "unexpected": "'v-html' directive can lead to XSS attack."
+      }
     }
   },
   "no-v-model-argument": {
@@ -5779,9 +5599,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow adding an argument to `v-model` used in custom component",
-        "categories": [
-          "essential"
-        ],
+        "categories": ["essential"],
         "url": "https://eslint.vuejs.org/rules/no-v-model-argument.html"
       },
       "fixable": null,
@@ -5796,10 +5614,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow v-text / v-html on component",
-        "categories": [
-          "essential",
-          "vue3-essential"
-        ],
+        "categories": ["essential", "vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-v-text-v-html-on-component.html"
       },
       "fixable": null,
@@ -5817,7 +5632,10 @@
         "url": "https://eslint.vuejs.org/rules/no-v-text.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "unexpected": "Don't use 'v-text'."
+      }
     }
   },
   "no-watch-after-await": {
@@ -5825,9 +5643,7 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow asynchronously registered `watch`",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/no-watch-after-await.html"
       },
       "fixable": null,
@@ -5855,10 +5671,7 @@
             {
               "oneOf": [
                 {
-                  "enum": [
-                    "always",
-                    "never"
-                  ]
+                  "enum": ["always", "never"]
                 },
                 {
                   "type": "object",
@@ -5885,10 +5698,7 @@
                 "ObjectExpression": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "always",
-                        "never"
-                      ]
+                      "enum": ["always", "never"]
                     },
                     {
                       "type": "object",
@@ -5912,10 +5722,7 @@
                 "ObjectPattern": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "always",
-                        "never"
-                      ]
+                      "enum": ["always", "never"]
                     },
                     {
                       "type": "object",
@@ -5939,10 +5746,7 @@
                 "ImportDeclaration": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "always",
-                        "never"
-                      ]
+                      "enum": ["always", "never"]
                     },
                     {
                       "type": "object",
@@ -5966,10 +5770,7 @@
                 "ExportDeclaration": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "always",
-                        "never"
-                      ]
+                      "enum": ["always", "never"]
                     },
                     {
                       "type": "object",
@@ -6019,10 +5820,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -6114,11 +5912,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always",
-                  "methods",
-                  "properties"
-                ]
+                "enum": ["always", "methods", "properties"]
               },
               {
                 "type": "object",
@@ -6137,10 +5931,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always",
-                  "methods"
-                ]
+                "enum": ["always", "methods"]
               },
               {
                 "type": "object",
@@ -6182,10 +5973,7 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce that each component should be in its own file",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/one-component-per-file.html"
       },
       "fixable": null,
@@ -6208,12 +5996,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "after",
-            "before",
-            "none",
-            null
-          ]
+          "enum": ["after", "before", "none", null]
         },
         {
           "type": "object",
@@ -6221,12 +6004,7 @@
             "overrides": {
               "type": "object",
               "additionalProperties": {
-                "enum": [
-                  "after",
-                  "before",
-                  "none",
-                  "ignore"
-                ]
+                "enum": ["after", "before", "none", "ignore"]
               }
             }
           },
@@ -6247,10 +6025,7 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce order of properties in components",
-        "categories": [
-          "vue3-recommended",
-          "recommended"
-        ],
+        "categories": ["vue3-recommended", "recommended"],
         "url": "https://eslint.vuejs.org/rules/order-in-components.html"
       },
       "fixable": "code",
@@ -6264,7 +6039,10 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "order": "The \"{{name}}\" property should be above the \"{{firstUnorderedPropertyName}}\" property on line {{line}}."
+      }
     }
   },
   "padding-line-between-blocks": {
@@ -6277,10 +6055,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "never",
-            "always"
-          ]
+          "enum": ["never", "always"]
         }
       ],
       "messages": {
@@ -6304,11 +6079,7 @@
             "type": "object",
             "properties": {
               "blankLine": {
-                "enum": [
-                  "always",
-                  "never",
-                  "consistent"
-                ]
+                "enum": ["always", "never", "consistent"]
               },
               "prev": {
                 "type": "string"
@@ -6318,11 +6089,7 @@
               }
             },
             "additionalProperties": false,
-            "required": [
-              "blankLine",
-              "prev",
-              "next"
-            ]
+            "required": ["blankLine", "prev", "next"]
           }
         }
       ],
@@ -6344,30 +6111,19 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             {
               "type": "object",
               "additionalProperties": false,
               "properties": {
                 "betweenOptions": {
-                  "enum": [
-                    "never",
-                    "always",
-                    "ignore"
-                  ]
+                  "enum": ["never", "always", "ignore"]
                 },
                 "withinOption": {
                   "oneOf": [
                     {
-                      "enum": [
-                        "never",
-                        "always",
-                        "ignore"
-                      ]
+                      "enum": ["never", "always", "ignore"]
                     },
                     {
                       "type": "object",
@@ -6375,28 +6131,16 @@
                         "^[a-zA-Z]*$": {
                           "oneOf": [
                             {
-                              "enum": [
-                                "never",
-                                "always",
-                                "ignore"
-                              ]
+                              "enum": ["never", "always", "ignore"]
                             },
                             {
                               "type": "object",
                               "properties": {
                                 "betweenItems": {
-                                  "enum": [
-                                    "never",
-                                    "always",
-                                    "ignore"
-                                  ]
+                                  "enum": ["never", "always", "ignore"]
                                 },
                                 "withinEach": {
-                                  "enum": [
-                                    "never",
-                                    "always",
-                                    "ignore"
-                                  ]
+                                  "enum": ["never", "always", "ignore"]
                                 }
                               },
                               "additionalProperties": false
@@ -6443,9 +6187,7 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce import from 'vue' instead of import from '@vue/*'",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/prefer-import-from-vue.html"
       },
       "fixable": "code",
@@ -6514,10 +6256,7 @@
       "hasSuggestions": true,
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -6534,21 +6273,18 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce specific casing for the Prop name in Vue components",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/prop-name-casing.html"
       },
       "fixable": null,
       "schema": [
         {
-          "enum": [
-            "camelCase",
-            "snake_case"
-          ]
+          "enum": ["camelCase", "snake_case"]
         }
-      ]
+      ],
+      "messages": {
+        "invalidCase": "Prop \"{{name}}\" is not in {{caseType}}."
+      }
     }
   },
   "quote-props": {
@@ -6628,14 +6364,14 @@
       "type": "problem",
       "docs": {
         "description": "require `v-bind:is` of `<component>` elements",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/require-component-is.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "requireComponentIs": "Expected '<component>' elements to have 'v-bind:is' attribute."
+      }
     }
   },
   "require-default-prop": {
@@ -6643,10 +6379,7 @@
       "type": "suggestion",
       "docs": {
         "description": "require default value for props",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/require-default-prop.html"
       },
       "fixable": null,
@@ -6674,38 +6407,39 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "expectedDirectExport": "Expected the component literal to be directly exported."
+      }
     }
   },
   "require-emit-validator": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "require type definitions in emits",
         "url": "https://eslint.vuejs.org/rules/require-emit-validator.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
+      "schema": [],
       "messages": {
         "missing": "Emit \"{{name}}\" should define at least its validator function.",
         "skipped": "Emit \"{{name}}\" should not skip validation, or you may define a validator function with no parameters.",
         "emptyValidation": "Replace with a validator function with no parameters."
-      },
-      "schema": []
+      }
     }
   },
   "require-explicit-emits": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "require `emits` option with name triggered by `$emit()`",
-        "categories": [
-          "vue3-strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/require-explicit-emits.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": [
         {
           "type": "object",
@@ -6727,13 +6461,13 @@
   },
   "require-expose": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "require declare public properties using `expose`",
         "url": "https://eslint.vuejs.org/rules/require-expose.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": [],
       "messages": {
         "requireExpose": "The public properties of the component must be explicitly declared using `expose`. If the component does not have public properties, declare it empty.",
@@ -6744,13 +6478,13 @@
   },
   "require-macro-variable-name": {
     "meta": {
-      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "require a certain macro variable name",
         "url": "https://eslint.vuejs.org/rules/require-macro-variable-name.html"
       },
       "fixable": null,
+      "hasSuggestions": true,
       "schema": [
         {
           "type": "object",
@@ -6794,7 +6528,11 @@
       },
       "fixable": null,
       "hasSuggestions": true,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "missingName": "Required name property is not set.",
+        "addName": "Add name property to component."
+      }
     }
   },
   "require-prop-comment": {
@@ -6810,12 +6548,7 @@
           "type": "object",
           "properties": {
             "type": {
-              "enum": [
-                "JSDoc",
-                "line",
-                "block",
-                "any"
-              ]
+              "enum": ["JSDoc", "line", "block", "any"]
             }
           },
           "additionalProperties": false
@@ -6834,14 +6567,14 @@
       "type": "suggestion",
       "docs": {
         "description": "require prop type to be a constructor",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/require-prop-type-constructor.html"
       },
       "fixable": "code",
-      "schema": []
+      "schema": [],
+      "messages": {
+        "propTypeConstructor": "The \"{{name}}\" property should be a constructor."
+      }
     }
   },
   "require-prop-types": {
@@ -6849,14 +6582,14 @@
       "type": "suggestion",
       "docs": {
         "description": "require type definitions in props",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/require-prop-types.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "requireType": "Prop \"{{name}}\" should define at least its type."
+      }
     }
   },
   "require-render-return": {
@@ -6864,14 +6597,14 @@
       "type": "problem",
       "docs": {
         "description": "enforce render function to always return value",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/require-render-return.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "expectedReturn": "Expected to return a value in render function."
+      }
     }
   },
   "require-slots-as-functions": {
@@ -6879,9 +6612,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce properties of `$slots` to be used as a function",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/require-slots-as-functions.html"
       },
       "fixable": null,
@@ -6896,15 +6627,30 @@
       "type": "problem",
       "docs": {
         "description": "require control the display of the content inside `<transition>`",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/require-toggle-inside-transition.html"
       },
       "fixable": null,
       "schema": [],
       "messages": {
         "expected": "The element inside `<transition>` is expected to have a `v-if` or `v-show` directive."
+      }
+    }
+  },
+  "require-typed-object-prop": {
+    "meta": {
+      "type": "suggestion",
+      "docs": {
+        "description": "enforce adding type declarations to object props",
+        "recommended": false,
+        "url": "https://eslint.vuejs.org/rules/require-typed-object-prop.html"
+      },
+      "fixable": null,
+      "hasSuggestions": true,
+      "schema": [],
+      "messages": {
+        "expectedTypeAnnotation": "Expected type annotation on object prop.",
+        "addTypeAnnotation": "Add `{{ type }}` type annotation."
       }
     }
   },
@@ -6916,10 +6662,10 @@
         "url": "https://eslint.vuejs.org/rules/require-typed-ref.html"
       },
       "fixable": null,
+      "schema": [],
       "messages": {
         "noType": "Specify type parameter for `{{name}}` function, otherwise created variable will not be typechecked."
-      },
-      "schema": []
+      }
     }
   },
   "require-v-for-key": {
@@ -6927,14 +6673,14 @@
       "type": "problem",
       "docs": {
         "description": "require `v-bind:key` with `v-for` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/require-v-for-key.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "requireKey": "Elements in iteration expect to have 'v-bind:key' directives."
+      }
     }
   },
   "require-valid-default-prop": {
@@ -6942,14 +6688,14 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce props default values to be valid",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/require-valid-default-prop.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "invalidType": "Type of the default value for '{{name}}' prop must be a {{types}}."
+      }
     }
   },
   "return-in-computed-property": {
@@ -6957,10 +6703,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce that a return statement is present in computed property",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/return-in-computed-property.html"
       },
       "fixable": null,
@@ -6974,7 +6717,11 @@
           },
           "additionalProperties": false
         }
-      ]
+      ],
+      "messages": {
+        "expectedReturnInFunction": "Expected to return a value in computed function.",
+        "expectedReturnInProperty": "Expected to return a value in \"{{name}}\" computed property."
+      }
     }
   },
   "return-in-emits-validator": {
@@ -6982,14 +6729,15 @@
       "type": "problem",
       "docs": {
         "description": "enforce that a return statement is present in emits validator",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/return-in-emits-validator.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "expectedTrue": "Expected to return a true value in \"{{name}}\" emits validator.",
+        "expectedBoolean": "Expected to return a boolean value in \"{{name}}\" emits validator."
+      }
     }
   },
   "script-indent": {
@@ -7008,9 +6756,7 @@
               "minimum": 1
             },
             {
-              "enum": [
-                "tab"
-              ]
+              "enum": ["tab"]
             }
           ]
         },
@@ -7062,8 +6808,8 @@
         "description": "prevent `<script setup>` variables used in `<template>` to be marked as unused",
         "url": "https://eslint.vuejs.org/rules/script-setup-uses-vars.html"
       },
-      "deprecated": true,
-      "schema": []
+      "schema": [],
+      "deprecated": true
     }
   },
   "singleline-html-element-content-newline": {
@@ -7071,10 +6817,7 @@
       "type": "layout",
       "docs": {
         "description": "require a line break before and after the contents of a singleline element",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/singleline-html-element-content-newline.html"
       },
       "fixable": "whitespace",
@@ -7118,10 +6861,7 @@
       "fixable": null,
       "schema": [
         {
-          "enum": [
-            "asc",
-            "desc"
-          ]
+          "enum": ["asc", "desc"]
         },
         {
           "type": "object",
@@ -7172,10 +6912,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -7183,12 +6920,7 @@
             "exceptions": {
               "type": "array",
               "items": {
-                "enum": [
-                  "{}",
-                  "[]",
-                  "()",
-                  "empty"
-                ]
+                "enum": ["{}", "[]", "()", "empty"]
               },
               "uniqueItems": true
             }
@@ -7285,7 +7017,10 @@
         "description": "enforce static class names order"
       },
       "fixable": "code",
-      "schema": []
+      "schema": [],
+      "messages": {
+        "shouldBeOrdered": "Classes should be ordered alphabetically."
+      }
     }
   },
   "template-curly-spacing": {
@@ -7302,10 +7037,7 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ],
       "messages": {
@@ -7321,21 +7053,19 @@
       "type": "suggestion",
       "docs": {
         "description": "disallow usage of `this` in template",
-        "categories": [
-          "vue3-recommended",
-          "recommended"
-        ],
+        "categories": ["vue3-recommended", "recommended"],
         "url": "https://eslint.vuejs.org/rules/this-in-template.html"
       },
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
-      ]
+      ],
+      "messages": {
+        "unexpected": "Unexpected usage of 'this'.",
+        "expected": "Expected 'this'."
+      }
     }
   },
   "use-v-on-exact": {
@@ -7343,14 +7073,14 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce usage of `exact` modifier on `v-on`",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/use-v-on-exact.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "considerExact": "Consider to use '.exact' modifier."
+      }
     }
   },
   "v-bind-style": {
@@ -7358,21 +7088,20 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce `v-bind` directive style",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/v-bind-style.html"
       },
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "shorthand",
-            "longform"
-          ]
+          "enum": ["shorthand", "longform"]
         }
-      ]
+      ],
+      "messages": {
+        "expectedLonghand": "Expected 'v-bind' before ':'.",
+        "unexpectedLonghand": "Unexpected 'v-bind' before ':'.",
+        "expectedLonghandForProp": "Expected 'v-bind:' instead of '.'."
+      }
     }
   },
   "v-for-delimiter-style": {
@@ -7386,30 +7115,26 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "in",
-            "of"
-          ]
+          "enum": ["in", "of"]
         }
-      ]
+      ],
+      "messages": {
+        "expected": "Expected '{{preferredDelimiter}}' instead of '{{usedDelimiter}}' in 'v-for'."
+      }
     }
   },
   "v-on-event-hyphenation": {
     "meta": {
+      "type": "suggestion",
       "docs": {
         "description": "enforce v-on event naming style on custom components in template",
-        "categories": [
-          "vue3-strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/v-on-event-hyphenation.html"
       },
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -7445,7 +7170,10 @@
           "additionalProperties": false
         }
       ],
-      "type": "suggestion"
+      "messages": {
+        "mustBeHyphenated": "v-on event '{{text}}' must be hyphenated.",
+        "cannotBeHyphenated": "v-on event '{{text}}' can't be hyphenated."
+      }
     }
   },
   "v-on-function-call": {
@@ -7458,10 +7186,7 @@
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -7473,10 +7198,12 @@
           "additionalProperties": false
         }
       ],
+      "messages": {
+        "always": "Method calls inside of 'v-on' directives must have parentheses.",
+        "never": "Method calls without arguments inside of 'v-on' directives must not have parentheses."
+      },
       "deprecated": true,
-      "replacedBy": [
-        "v-on-handler-style"
-      ]
+      "replacedBy": ["v-on-handler-style"]
     }
   },
   "v-on-handler-style": {
@@ -7491,10 +7218,7 @@
         {
           "oneOf": [
             {
-              "enum": [
-                "inline",
-                "inline-function"
-              ]
+              "enum": ["inline", "inline-function"]
             },
             {
               "type": "array",
@@ -7503,10 +7227,7 @@
                   "const": "method"
                 },
                 {
-                  "enum": [
-                    "inline",
-                    "inline-function"
-                  ]
+                  "enum": ["inline", "inline-function"]
                 }
               ],
               "uniqueItems": true,
@@ -7544,21 +7265,19 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce `v-on` directive style",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/v-on-style.html"
       },
       "fixable": "code",
       "schema": [
         {
-          "enum": [
-            "shorthand",
-            "longform"
-          ]
+          "enum": ["shorthand", "longform"]
         }
-      ]
+      ],
+      "messages": {
+        "expectedShorthand": "Expected '@' instead of 'v-on:'.",
+        "expectedLonghand": "Expected 'v-on:' instead of '@'."
+      }
     }
   },
   "v-slot-style": {
@@ -7566,10 +7285,7 @@
       "type": "suggestion",
       "docs": {
         "description": "enforce `v-slot` directive style",
-        "categories": [
-          "vue3-strongly-recommended",
-          "strongly-recommended"
-        ],
+        "categories": ["vue3-strongly-recommended", "strongly-recommended"],
         "url": "https://eslint.vuejs.org/rules/v-slot-style.html"
       },
       "fixable": "code",
@@ -7577,33 +7293,19 @@
         {
           "anyOf": [
             {
-              "enum": [
-                "shorthand",
-                "longform"
-              ]
+              "enum": ["shorthand", "longform"]
             },
             {
               "type": "object",
               "properties": {
                 "atComponent": {
-                  "enum": [
-                    "shorthand",
-                    "longform",
-                    "v-slot"
-                  ]
+                  "enum": ["shorthand", "longform", "v-slot"]
                 },
                 "default": {
-                  "enum": [
-                    "shorthand",
-                    "longform",
-                    "v-slot"
-                  ]
+                  "enum": ["shorthand", "longform", "v-slot"]
                 },
                 "named": {
-                  "enum": [
-                    "shorthand",
-                    "longform"
-                  ]
+                  "enum": ["shorthand", "longform"]
                 }
               },
               "additionalProperties": false
@@ -7623,10 +7325,7 @@
       "type": "problem",
       "docs": {
         "description": "require valid attribute names",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-attribute-name.html"
       },
       "fixable": null,
@@ -7641,10 +7340,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `defineEmits` compiler macro",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-define-emits.html"
       },
       "fixable": null,
@@ -7681,10 +7377,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `defineProps` compiler macro",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-define-props.html"
       },
       "fixable": null,
@@ -7703,29 +7396,34 @@
       "type": "problem",
       "docs": {
         "description": "require valid keys in model option",
-        "categories": [
-          "essential"
-        ],
+        "categories": ["essential"],
         "url": "https://eslint.vuejs.org/rules/valid-model-definition.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "invalidKey": "Invalid key '{{name}}' in model option."
+      }
     }
   },
   "valid-next-tick": {
     "meta": {
-      "hasSuggestions": true,
       "type": "problem",
       "docs": {
         "description": "enforce valid `nextTick` function calls",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-next-tick.html"
       },
       "fixable": "code",
-      "schema": []
+      "hasSuggestions": true,
+      "schema": [],
+      "messages": {
+        "shouldBeFunction": "`nextTick` is a function.",
+        "missingCallbackOrAwait": "Await the Promise returned by `nextTick` or pass a callback function.",
+        "addAwait": "Add missing `await` statement.",
+        "tooManyParameters": "`nextTick` expects zero or one parameters.",
+        "eitherAwaitOrCallback": "Either await the Promise or pass a callback function to `nextTick`."
+      }
     }
   },
   "valid-template-root": {
@@ -7733,14 +7431,15 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid template root",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-template-root.html"
       },
       "fixable": null,
-      "schema": []
+      "schema": [],
+      "messages": {
+        "emptySrc": "The template root with 'src' attribute is required to be empty.",
+        "noChild": "The template requires child element."
+      }
     }
   },
   "valid-v-bind-sync": {
@@ -7748,9 +7447,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `.sync` modifier on `v-bind` directives",
-        "categories": [
-          "essential"
-        ],
+        "categories": ["essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-bind-sync.html"
       },
       "fixable": null,
@@ -7769,10 +7466,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-bind` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-bind.html"
       },
       "fixable": null,
@@ -7788,10 +7482,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-cloak` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-cloak.html"
       },
       "fixable": null,
@@ -7808,10 +7499,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-else-if` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-else-if.html"
       },
       "fixable": null,
@@ -7831,10 +7519,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-else` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-else.html"
       },
       "fixable": null,
@@ -7854,10 +7539,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-for` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-for.html"
       },
       "fixable": null,
@@ -7879,10 +7561,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-html` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-html.html"
       },
       "fixable": null,
@@ -7899,10 +7578,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-if` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-if.html"
       },
       "fixable": null,
@@ -7921,9 +7597,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-is` directives",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-is.html"
       },
       "fixable": null,
@@ -7941,9 +7615,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-memo` directives",
-        "categories": [
-          "vue3-essential"
-        ],
+        "categories": ["vue3-essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-memo.html"
       },
       "fixable": null,
@@ -7962,10 +7634,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-model` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-model.html"
       },
       "fixable": null,
@@ -7988,10 +7657,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-on` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-on.html"
       },
       "fixable": null,
@@ -8018,10 +7684,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-once` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-once.html"
       },
       "fixable": null,
@@ -8038,10 +7701,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-pre` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-pre.html"
       },
       "fixable": null,
@@ -8058,10 +7718,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-show` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-show.html"
       },
       "fixable": null,
@@ -8079,10 +7736,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-slot` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-slot.html"
       },
       "fixable": null,
@@ -8114,10 +7768,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce valid `v-text` directives",
-        "categories": [
-          "vue3-essential",
-          "essential"
-        ],
+        "categories": ["vue3-essential", "essential"],
         "url": "https://eslint.vuejs.org/rules/valid-v-text.html"
       },
       "fixable": null,

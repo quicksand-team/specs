@@ -121,10 +121,7 @@
       "schema": [
         {
           "type": "string",
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         },
         {
           "type": "object",
@@ -134,10 +131,7 @@
             },
             "destructureInSignature": {
               "type": "string",
-              "enum": [
-                "always",
-                "ignore"
-              ]
+              "enum": ["always", "ignore"]
             }
           },
           "additionalProperties": false
@@ -154,13 +148,17 @@
         "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/display-name.md"
       },
       "messages": {
-        "noDisplayName": "Component definition is missing display name"
+        "noDisplayName": "Component definition is missing display name",
+        "noContextDisplayName": "Context definition is missing display name"
       },
       "schema": [
         {
           "type": "object",
           "properties": {
             "ignoreTranspilerName": {
+              "type": "boolean"
+            },
+            "checkContextObjects": {
               "type": "boolean"
             }
           },
@@ -207,7 +205,29 @@
                       "message": {
                         "type": "string"
                       }
-                    }
+                    },
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "propName": {
+                        "type": "string"
+                      },
+                      "disallowedFor": {
+                        "type": "array",
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "message": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["disallowedFor"],
+                    "additionalProperties": false
                   }
                 ]
               }
@@ -301,9 +321,7 @@
                         "type": "string"
                       }
                     },
-                    "required": [
-                      "element"
-                    ],
+                    "required": ["element"],
                     "additionalProperties": false
                   }
                 ]
@@ -415,19 +433,13 @@
             "unnamedComponents": {
               "anyOf": [
                 {
-                  "enum": [
-                    "arrow-function",
-                    "function-expression"
-                  ]
+                  "enum": ["arrow-function", "function-expression"]
                 },
                 {
                   "type": "array",
                   "items": {
                     "type": "string",
-                    "enum": [
-                      "arrow-function",
-                      "function-expression"
-                    ]
+                    "enum": ["arrow-function", "function-expression"]
                   }
                 }
               ]
@@ -504,10 +516,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always",
-                  "never"
-                ]
+                "enum": ["always", "never"]
               }
             ],
             "additionalItems": false
@@ -516,9 +525,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "always"
-                ]
+                "enum": ["always"]
               },
               {
                 "type": "object",
@@ -541,9 +548,7 @@
             "type": "array",
             "items": [
               {
-                "enum": [
-                  "never"
-                ]
+                "enum": ["never"]
               },
               {
                 "type": "object",
@@ -686,10 +691,7 @@
             "type": "object",
             "properties": {
               "when": {
-                "enum": [
-                  "always",
-                  "never"
-                ]
+                "enum": ["always", "never"]
               },
               "allowMultiline": {
                 "type": "boolean"
@@ -698,10 +700,7 @@
                 "type": "object",
                 "properties": {
                   "objectLiterals": {
-                    "enum": [
-                      "always",
-                      "never"
-                    ]
+                    "enum": ["always", "never"]
                   }
                 }
               }
@@ -741,10 +740,7 @@
                 ]
               },
               {
-                "enum": [
-                  "always",
-                  "never"
-                ]
+                "enum": ["always", "never"]
               }
             ]
           },
@@ -758,10 +754,7 @@
                 "type": "object",
                 "properties": {
                   "objectLiterals": {
-                    "enum": [
-                      "always",
-                      "never"
-                    ]
+                    "enum": ["always", "never"]
                   }
                 }
               }
@@ -786,27 +779,16 @@
         {
           "anyOf": [
             {
-              "enum": [
-                "consistent",
-                "never"
-              ]
+              "enum": ["consistent", "never"]
             },
             {
               "type": "object",
               "properties": {
                 "singleline": {
-                  "enum": [
-                    "consistent",
-                    "require",
-                    "forbid"
-                  ]
+                  "enum": ["consistent", "require", "forbid"]
                 },
                 "multiline": {
-                  "enum": [
-                    "consistent",
-                    "require",
-                    "forbid"
-                  ]
+                  "enum": ["consistent", "require", "forbid"]
                 }
               },
               "additionalProperties": false
@@ -839,10 +821,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ]
     }
@@ -864,10 +843,7 @@
           "type": "object",
           "properties": {
             "allow": {
-              "enum": [
-                "always",
-                "as-needed"
-              ]
+              "enum": ["always", "as-needed"]
             },
             "extensions": {
               "type": "array",
@@ -900,7 +876,8 @@
             "always",
             "never",
             "multiline",
-            "multiline-multiprop"
+            "multiline-multiprop",
+            "multiprop"
           ]
         }
       ]
@@ -947,9 +924,7 @@
                 },
                 "eventHandlerPropPrefix": {
                   "type": "boolean",
-                  "enum": [
-                    false
-                  ]
+                  "enum": [false]
                 },
                 "checkLocalVariables": {
                   "type": "boolean"
@@ -965,9 +940,7 @@
               "properties": {
                 "eventHandlerPrefix": {
                   "type": "boolean",
-                  "enum": [
-                    false
-                  ]
+                  "enum": [false]
                 },
                 "eventHandlerPropPrefix": {
                   "type": "string"
@@ -1020,9 +993,7 @@
         {
           "anyOf": [
             {
-              "enum": [
-                "tab"
-              ]
+              "enum": ["tab"]
             },
             {
               "type": "integer"
@@ -1060,10 +1031,7 @@
         {
           "anyOf": [
             {
-              "enum": [
-                "tab",
-                "first"
-              ]
+              "enum": ["tab", "first"]
             },
             {
               "type": "integer"
@@ -1074,10 +1042,7 @@
                 "indentMode": {
                   "anyOf": [
                     {
-                      "enum": [
-                        "tab",
-                        "first"
-                      ]
+                      "enum": ["tab", "first"]
                     },
                     {
                       "type": "integer"
@@ -1200,10 +1165,7 @@
                 },
                 "when": {
                   "type": "string",
-                  "enum": [
-                    "always",
-                    "multiline"
-                  ]
+                  "enum": ["always", "multiline"]
                 }
               },
               "additionalProperties": false
@@ -1254,9 +1216,7 @@
                 "const": true
               }
             },
-            "required": [
-              "prevent"
-            ]
+            "required": ["prevent"]
           }
         }
       ]
@@ -1380,16 +1340,10 @@
             "validStrategies": {
               "type": "array",
               "items": {
-                "enum": [
-                  "ternary",
-                  "coerce"
-                ]
+                "enum": ["ternary", "coerce"]
               },
               "uniqueItems": true,
-              "default": [
-                "ternary",
-                "coerce"
-              ]
+              "default": ["ternary", "coerce"]
             }
           },
           "additionalProperties": false
@@ -1466,10 +1420,7 @@
                 }
               }
             },
-            "required": [
-              "name",
-              "props"
-            ],
+            "required": ["name", "props"],
             "additionalProperties": false
           }
         }
@@ -1497,10 +1448,7 @@
               "type": "boolean"
             },
             "enforceDynamicLinks": {
-              "enum": [
-                "always",
-                "never"
-              ]
+              "enum": ["always", "never"]
             },
             "warnOnSpreadAttributes": {
               "type": "boolean"
@@ -1562,11 +1510,7 @@
           "type": "object",
           "properties": {
             "allow": {
-              "enum": [
-                "none",
-                "literal",
-                "single-child"
-              ]
+              "enum": ["none", "literal", "single-child"]
             }
           },
           "default": {
@@ -1621,35 +1565,19 @@
               "type": "object",
               "properties": {
                 "props": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "ignore"
-                  ]
+                  "enum": ["always", "never", "ignore"]
                 },
                 "children": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "ignore"
-                  ]
+                  "enum": ["always", "never", "ignore"]
                 },
                 "propElementValues": {
-                  "enum": [
-                    "always",
-                    "never",
-                    "ignore"
-                  ]
+                  "enum": ["always", "never", "ignore"]
                 }
               },
               "additionalProperties": false
             },
             {
-              "enum": [
-                "always",
-                "never",
-                "ignore"
-              ]
+              "enum": ["always", "never", "ignore"]
             }
           ]
         }
@@ -1713,10 +1641,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "syntax",
-            "element"
-          ]
+          "enum": ["syntax", "element"]
         }
       ]
     }
@@ -1755,16 +1680,10 @@
               "type": "object",
               "properties": {
                 "html": {
-                  "enum": [
-                    "enforce",
-                    "ignore"
-                  ]
+                  "enum": ["enforce", "ignore"]
                 },
                 "custom": {
-                  "enum": [
-                    "enforce",
-                    "ignore"
-                  ]
+                  "enum": ["enforce", "ignore"]
                 },
                 "exceptions": {
                   "type": "array",
@@ -1778,20 +1697,13 @@
             {
               "not": {
                 "type": "object",
-                "required": [
-                  "html",
-                  "custom"
-                ],
+                "required": ["html", "custom"],
                 "properties": {
                   "html": {
-                    "enum": [
-                      "ignore"
-                    ]
+                    "enum": ["ignore"]
                   },
                   "custom": {
-                    "enum": [
-                      "ignore"
-                    ]
+                    "enum": ["ignore"]
                   },
                   "exceptions": {
                     "type": "array",
@@ -1809,9 +1721,7 @@
   "jsx-sort-default-props": {
     "meta": {
       "deprecated": true,
-      "replacedBy": [
-        "sort-default-props"
-      ],
+      "replacedBy": ["sort-default-props"],
       "docs": {
         "description": "Enforce defaultProps declarations alphabetical sorting",
         "category": "Stylistic Issues",
@@ -1868,11 +1778,7 @@
               "type": "boolean"
             },
             "multiline": {
-              "enum": [
-                "ignore",
-                "first",
-                "last"
-              ],
+              "enum": ["ignore", "first", "last"],
               "default": "ignore"
             },
             "ignoreCase": {
@@ -1882,10 +1788,7 @@
               "type": "boolean"
             },
             "reservedFirst": {
-              "type": [
-                "array",
-                "boolean"
-              ]
+              "type": ["array", "boolean"]
             },
             "locale": {
               "type": "string",
@@ -1900,9 +1803,7 @@
   "jsx-space-before-closing": {
     "meta": {
       "deprecated": true,
-      "replacedBy": [
-        "jsx-tag-spacing"
-      ],
+      "replacedBy": ["jsx-tag-spacing"],
       "docs": {
         "description": "Enforce spacing before closing bracket in JSX",
         "category": "Stylistic Issues",
@@ -1916,10 +1817,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ]
     }
@@ -1952,35 +1850,16 @@
           "type": "object",
           "properties": {
             "closingSlash": {
-              "enum": [
-                "always",
-                "never",
-                "allow"
-              ]
+              "enum": ["always", "never", "allow"]
             },
             "beforeSelfClosing": {
-              "enum": [
-                "always",
-                "proportional-always",
-                "never",
-                "allow"
-              ]
+              "enum": ["always", "proportional-always", "never", "allow"]
             },
             "afterOpening": {
-              "enum": [
-                "always",
-                "allow-multiline",
-                "never",
-                "allow"
-              ]
+              "enum": ["always", "allow-multiline", "never", "allow"]
             },
             "beforeClosing": {
-              "enum": [
-                "always",
-                "proportional-always",
-                "never",
-                "allow"
-              ]
+              "enum": ["always", "proportional-always", "never", "allow"]
             }
           },
           "default": {
@@ -2034,67 +1913,25 @@
           "type": "object",
           "properties": {
             "declaration": {
-              "enum": [
-                true,
-                false,
-                "ignore",
-                "parens",
-                "parens-new-line"
-              ]
+              "enum": [true, false, "ignore", "parens", "parens-new-line"]
             },
             "assignment": {
-              "enum": [
-                true,
-                false,
-                "ignore",
-                "parens",
-                "parens-new-line"
-              ]
+              "enum": [true, false, "ignore", "parens", "parens-new-line"]
             },
             "return": {
-              "enum": [
-                true,
-                false,
-                "ignore",
-                "parens",
-                "parens-new-line"
-              ]
+              "enum": [true, false, "ignore", "parens", "parens-new-line"]
             },
             "arrow": {
-              "enum": [
-                true,
-                false,
-                "ignore",
-                "parens",
-                "parens-new-line"
-              ]
+              "enum": [true, false, "ignore", "parens", "parens-new-line"]
             },
             "condition": {
-              "enum": [
-                true,
-                false,
-                "ignore",
-                "parens",
-                "parens-new-line"
-              ]
+              "enum": [true, false, "ignore", "parens", "parens-new-line"]
             },
             "logical": {
-              "enum": [
-                true,
-                false,
-                "ignore",
-                "parens",
-                "parens-new-line"
-              ]
+              "enum": [true, false, "ignore", "parens", "parens-new-line"]
             },
             "prop": {
-              "enum": [
-                true,
-                false,
-                "ignore",
-                "parens",
-                "parens-new-line"
-              ]
+              "enum": [true, false, "ignore", "parens", "parens-new-line"]
             }
           },
           "additionalProperties": false
@@ -2131,9 +1968,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "enum": [
-              "rel"
-            ]
+            "enum": ["rel"]
           }
         }
       ],
@@ -2280,9 +2115,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "disallow-in-func"
-          ]
+          "enum": ["disallow-in-func"]
         }
       ]
     }
@@ -2300,9 +2133,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "disallow-in-func"
-          ]
+          "enum": ["disallow-in-func"]
         }
       ]
     }
@@ -2710,9 +2541,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "disallow-in-func"
-          ]
+          "enum": ["disallow-in-func"]
         }
       ]
     }
@@ -2731,10 +2560,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ]
     }
@@ -2866,21 +2692,10 @@
               "type": "boolean"
             },
             "classes": {
-              "allow": {
-                "enum": [
-                  "defaultProps",
-                  "ignore"
-                ]
-              }
+              "enum": ["defaultProps", "ignore"]
             },
             "functions": {
-              "allow": {
-                "enum": [
-                  "defaultArguments",
-                  "defaultProps",
-                  "ignore"
-                ]
-              }
+              "enum": ["defaultArguments", "defaultProps", "ignore"]
             },
             "ignoreFunctionalComponents": {
               "type": "boolean"
@@ -3000,12 +2815,7 @@
       ]
     },
     "defaultConfig": {
-      "order": [
-        "static-methods",
-        "lifecycle",
-        "everything-else",
-        "render"
-      ],
+      "order": ["static-methods", "lifecycle", "everything-else", "render"],
       "groups": {
         "lifecycle": [
           "displayName",
@@ -3114,10 +2924,7 @@
       },
       "schema": [
         {
-          "enum": [
-            "always",
-            "never"
-          ]
+          "enum": ["always", "never"]
         }
       ]
     }

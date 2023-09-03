@@ -13,6 +13,14 @@
       "name": "typescript-config"
     },
     {
+      "path": "./packages/commitlint-config",
+      "name": "commitlint-config"
+    },
+    {
+      "path": "./packages/lint-staged-config",
+      "name": "lint-staged-config"
+    },
+    {
       "path": ".",
       "name": "specs-workspace"
     }

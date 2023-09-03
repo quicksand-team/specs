@@ -1,5 +1,3 @@
-import babelParser from '@babel/eslint-parser';
-
 export default {
   files: [
     '**/*.js',

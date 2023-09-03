@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@quicksand/typescript-config",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "type": "commonjs",
   "main": "./tsconfig.json",
   "files": [
@@ -13,6 +13,6 @@
     "./tsconfig.vue.json"
   ],
   "devDependencies": {
-    "typescript": "latest"
+    "typescript": "^5.2.2"
   }
 }
