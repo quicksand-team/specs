@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "build": "turbo run build",
+    "changeset": "changeset",
     "commit": "git-cz",
     "dev": "turbo run dev",
     "format": "prettier --write .",
     "lint": "turbo run lint",
     "prepare": "husky install",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish"
+    "publish-packages": "turbo run build lint && changeset version && changeset publish",
+    "version-packages": "changeset version"
   },
   "config": {
     "commitizen": {
@@ -18,6 +20,7 @@
     }
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
     "@quicksand/commitlint-config": "workspace:*",
     "@quicksand/eslint-config": "workspace:*",
