@@ -60,50 +60,50 @@ importers:
   packages/eslint-config:
     dependencies:
       '@babel/core':
-        specifier: ^7.22.9
+        specifier: ^7.22.15
         version: 7.22.15
       '@babel/eslint-parser':
-        specifier: ^7.22.9
+        specifier: ^7.22.15
         version: 7.22.15(@babel/core@7.22.15)(eslint@8.48.0)
       '@babel/preset-env':
-        specifier: ^7.22.9
+        specifier: ^7.22.15
         version: 7.22.15(@babel/core@7.22.15)
       '@babel/preset-react':
-        specifier: ^7.22.5
+        specifier: ^7.22.15
         version: 7.22.15(@babel/core@7.22.15)
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.0.0
+        specifier: ^6.6.0
         version: 6.6.0(@typescript-eslint/parser@6.6.0)(eslint@8.48.0)(typescript@5.2.2)
       '@typescript-eslint/parser':
-        specifier: ^6.0.0
+        specifier: ^6.6.0
         version: 6.6.0(eslint@8.48.0)(typescript@5.2.2)
       eslint:
-        specifier: ^8.45.0
+        specifier: ^8.48.0
         version: 8.48.0
       eslint-config-prettier:
-        specifier: ^8.8.0
-        version: 8.10.0(eslint@8.48.0)
+        specifier: ^9.0.0
+        version: 9.0.0(eslint@8.48.0)
       eslint-plugin-react:
-        specifier: ^7.32.2
+        specifier: ^7.33.2
         version: 7.33.2(eslint@8.48.0)
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.0(eslint@8.48.0)
       eslint-plugin-vue:
-        specifier: ^9.15.1
+        specifier: ^9.17.0
         version: 9.17.0(eslint@8.48.0)
       vue-eslint-parser:
         specifier: ^9.3.1
         version: 9.3.1(eslint@8.48.0)
     devDependencies:
       '@eslint/js':
-        specifier: ^8.45.0
+        specifier: ^8.48.0
         version: 8.48.0
       '@quicksand/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/eslint':
-        specifier: ^8.44.0
+        specifier: ^8.44.2
         version: 8.44.2
       '@types/eslint__js':
         specifier: ^8.42.0
@@ -112,7 +112,7 @@ importers:
         specifier: ^11.0.1
         version: 11.0.1
       '@types/node':
-        specifier: ^20.4.2
+        specifier: ^20.5.9
         version: 20.5.9
       deepmerge-ts:
         specifier: ^5.1.0
@@ -121,10 +121,10 @@ importers:
         specifier: ^11.1.1
         version: 11.1.1
       tsx:
-        specifier: ^3.12.7
+        specifier: ^3.12.8
         version: 3.12.8
       typescript:
-        specifier: ^5.1.6
+        specifier: ^5.2.2
         version: 5.2.2
 
   packages/lint-staged-config:
@@ -2757,7 +2757,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001525
+      caniuse-lite: 1.0.30001527
       electron-to-chromium: 1.4.508
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.10)
@@ -2802,8 +2802,8 @@ packages:
     resolution: {integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==}
     engines: {node: '>=6'}
 
-  /caniuse-lite@1.0.30001525:
-    resolution: {integrity: sha512-/3z+wB4icFt3r0USMwxujAqRvaD/B7rvGTsKhbhSQErVrJvkZCLhgNLJxU8MevahQVH6hCU9FsHdNUFbiwmE7Q==}
+  /caniuse-lite@1.0.30001527:
+    resolution: {integrity: sha512-YkJi7RwPgWtXVSgK4lG9AHH57nSzvvOp9MesgXmw4Q7n0C3H04L0foHqfxcmSAm5AcWb8dW9AYj2tR7/5GnddQ==}
     dev: false
 
   /chalk@2.4.2:
@@ -3369,8 +3369,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /eslint-config-prettier@8.10.0(eslint@8.48.0):
-    resolution: {integrity: sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==}
+  /eslint-config-prettier@9.0.0(eslint@8.48.0):
+    resolution: {integrity: sha512-IcJsTkJae2S35pRsRAwoCE+925rJJStOdkKnLVgtE+tEpqU0EVVM7OqrwxqgptKdX29NUwC82I5pXsGFIgSevw==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
