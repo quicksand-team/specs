@@ -1,0 +1,12 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@quicksand/commitlint-config": "1.0.0-alpha.4",
+    "@quicksand/eslint-config": "1.0.0-alpha.4",
+    "@quicksand/lint-staged-config": "1.0.0-alpha.4",
+    "@quicksand/prettier-config": "1.0.0-alpha.4",
+    "@quicksand/typescript-config": "1.0.0-alpha.4"
+  },
+  "changesets": ["clean-pandas-smell"]
+}
