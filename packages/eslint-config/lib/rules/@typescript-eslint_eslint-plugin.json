@@ -67,8 +67,10 @@
         "requiresTypeChecking": true,
         "url": "https://typescript-eslint.io/rules/await-thenable"
       },
+      "hasSuggestions": true,
       "messages": {
-        "await": "Unexpected `await` of a non-Promise (non-\"Thenable\") value."
+        "await": "Unexpected `await` of a non-Promise (non-\"Thenable\") value.",
+        "removeAwait": "Remove unnecessary `await`."
       },
       "schema": [],
       "type": "problem"
@@ -2469,7 +2471,38 @@
       "fixable": "whitespace",
       "schema": [
         {
-          "enum": ["always", "never"]
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "enforce": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "blankLine": {
+                        "enum": ["always", "never"]
+                      },
+                      "prev": {
+                        "enum": ["method", "field", "*"]
+                      },
+                      "next": {
+                        "enum": ["method", "field", "*"]
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": ["blankLine", "prev", "next"]
+                  },
+                  "minItems": 1
+                }
+              },
+              "additionalProperties": false,
+              "required": ["enforce"]
+            },
+            {
+              "enum": ["always", "never"]
+            }
+          ]
         },
         {
           "type": "object",

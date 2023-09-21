@@ -1,5 +1,5 @@
-import type { EslintConfig, EslintConfigWithExtends } from './common.js';
 import { deepmergeCustom } from 'deepmerge-ts';
+import type { EslintConfig, EslintConfigWithExtends } from './common.js';
 
 export function mergeEslintConfigs(
   configs: Record<string, EslintConfigWithExtends>,

@@ -5,11 +5,11 @@
   "type": "commonjs",
   "main": "index.js",
   "dependencies": {
-    "@prettier/plugin-xml": "^3.1.0",
-    "prettier": "^3.0.0",
-    "prettier-plugin-organize-imports": "^3.2.2",
+    "@prettier/plugin-xml": "^3.2.1",
+    "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^3.2.3",
     "prettier-plugin-package-perfection": "^1.1.0",
-    "prettier-plugin-sh": "^0.13.0",
-    "prettier-plugin-toml": "^0.3.1"
+    "prettier-plugin-sh": "^0.13.1",
+    "prettier-plugin-toml": "^1.0.0"
   }
 }
