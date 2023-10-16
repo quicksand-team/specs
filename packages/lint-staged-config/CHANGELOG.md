@@ -1,5 +1,18 @@
 # @quicksand/lint-staged-config
 
+## 1.0.0-alpha.11
+
+### Patch Changes
+
+- 更新依赖
+
+## 1.0.0-alpha.10
+
+### Patch Changes
+
+- - 更新依赖
+  - 支持`bun.js`环境
+
 ## 1.0.0-alpha.6
 
 ### Patch Changes

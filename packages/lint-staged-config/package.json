@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@quicksand/lint-staged-config",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.11",
   "type": "commonjs",
   "main": "./index.js",
   "dependencies": {

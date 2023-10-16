@@ -8,5 +8,10 @@
     "@quicksand/prettier-config": "1.0.0-alpha.4",
     "@quicksand/typescript-config": "1.0.0-alpha.4"
   },
-  "changesets": ["clean-pandas-smell", "tiny-emus-live"]
+  "changesets": [
+    "clean-pandas-smell",
+    "dry-mugs-lick",
+    "slow-papayas-hide",
+    "tiny-emus-live"
+  ]
 }
