@@ -1,9 +1,9 @@
 export default {
-  "recommended": {
-    "rules": {
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn"
+  recommended: {
+    rules: {
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
     },
-    "settings": {}
-  }
+    settings: {},
+  },
 };

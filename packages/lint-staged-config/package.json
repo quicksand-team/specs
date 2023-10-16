@@ -5,6 +5,6 @@
   "type": "commonjs",
   "main": "./index.js",
   "dependencies": {
-    "lint-staged": "^14"
+    "lint-staged": "^15"
   }
 }

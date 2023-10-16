@@ -121,6 +121,7 @@
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/array-callback-return"
       },
+      "hasSuggestions": true,
       "schema": [
         {
           "type": "object",
@@ -132,6 +133,10 @@
             "checkForEach": {
               "type": "boolean",
               "default": false
+            },
+            "allowVoid": {
+              "type": "boolean",
+              "default": false
             }
           },
           "additionalProperties": false
@@ -141,7 +146,9 @@
         "expectedAtEnd": "{{arrayMethodName}}() expects a value to be returned at the end of {{name}}.",
         "expectedInside": "{{arrayMethodName}}() expects a return value from {{name}}.",
         "expectedReturnValue": "{{arrayMethodName}}() expects a return value from {{name}}.",
-        "expectedNoReturnValue": "{{arrayMethodName}}() expects no useless return value from {{name}}."
+        "expectedNoReturnValue": "{{arrayMethodName}}() expects no useless return value from {{name}}.",
+        "wrapBraces": "Wrap the expression in `{}`.",
+        "prependVoid": "Prepend `void` to the expression."
       }
     }
   },
@@ -5467,6 +5474,7 @@
       "schema": [],
       "messages": {
         "surrogatePairWithoutUFlag": "Unexpected surrogate pair in character class. Use 'u' flag.",
+        "surrogatePair": "Unexpected surrogate pair in character class.",
         "combiningClass": "Unexpected combined character in character class.",
         "emojiModifier": "Unexpected modified Emoji in character class.",
         "regionalIndicatorSymbol": "Unexpected national flag in character class.",
@@ -5830,6 +5838,8 @@
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/no-new-object"
       },
+      "deprecated": true,
+      "replacedBy": ["no-object-constructor"],
       "schema": [],
       "messages": {
         "preferLiteral": "The object literal notation {} is preferable."
@@ -5909,6 +5919,22 @@
       "messages": {
         "unexpectedCall": "'{{name}}' is not a function.",
         "unexpectedRefCall": "'{{name}}' is reference to '{{ref}}', which is not a function."
+      }
+    }
+  },
+  "no-object-constructor": {
+    "meta": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Disallow calls to the `Object` constructor without an argument",
+        "recommended": false,
+        "url": "https://eslint.org/docs/latest/rules/no-object-constructor"
+      },
+      "hasSuggestions": true,
+      "schema": [],
+      "messages": {
+        "preferLiteral": "The object literal notation {} is preferable.",
+        "useLiteral": "Replace with '{{replacement}}'."
       }
     }
   },
