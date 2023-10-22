@@ -5934,7 +5934,8 @@
       "schema": [],
       "messages": {
         "preferLiteral": "The object literal notation {} is preferable.",
-        "useLiteral": "Replace with '{{replacement}}'."
+        "useLiteral": "Replace with '{{replacement}}'.",
+        "useLiteralAfterSemicolon": "Replace with '{{replacement}}', add preceding semicolon."
       }
     }
   },

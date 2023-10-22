@@ -6842,6 +6842,93 @@
       "schema": []
     }
   },
+  "prefer-destructuring": {
+    "defaultOptions": [
+      {
+        "VariableDeclarator": {
+          "array": true,
+          "object": true
+        },
+        "AssignmentExpression": {
+          "array": true,
+          "object": true
+        }
+      },
+      {}
+    ],
+    "meta": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Require destructuring from arrays and/or objects",
+        "extendsBaseRule": true,
+        "requiresTypeChecking": true,
+        "url": "https://typescript-eslint.io/rules/prefer-destructuring"
+      },
+      "schema": [
+        {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "VariableDeclarator": {
+                  "type": "object",
+                  "properties": {
+                    "array": {
+                      "type": "boolean"
+                    },
+                    "object": {
+                      "type": "boolean"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "AssignmentExpression": {
+                  "type": "object",
+                  "properties": {
+                    "array": {
+                      "type": "boolean"
+                    },
+                    "object": {
+                      "type": "boolean"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "array": {
+                  "type": "boolean"
+                },
+                "object": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "enforceForRenamedProperties": {
+              "type": "boolean"
+            },
+            "enforceForDeclarationWithTypeAnnotation": {
+              "type": "boolean"
+            }
+          }
+        }
+      ],
+      "fixable": "code",
+      "messages": {
+        "preferDestructuring": "Use {{type}} destructuring."
+      }
+    }
+  },
   "prefer-enum-initializers": {
     "defaultOptions": [],
     "meta": {

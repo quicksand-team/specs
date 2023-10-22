@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@quicksand/eslint-config",
-  "version": "1.0.0-alpha.11",
+  "version": "1.0.0-alpha.12",
   "type": "module",
   "main": "./index.js",
   "files": [
@@ -15,9 +15,9 @@
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.5",
-    "eslint": "^8.51.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -25,15 +25,15 @@
     "vue-eslint-parser": "^9.3.2"
   },
   "devDependencies": {
-    "@eslint/js": "^8.51.0",
+    "@eslint/js": "^8.52.0",
     "@quicksand/typescript-config": "workspace:*",
-    "@types/eslint": "^8.44.4",
-    "@types/eslint__js": "^8.42.1",
-    "@types/fs-extra": "^11.0.2",
-    "@types/node": "^20.8.6",
+    "@types/eslint": "^8.44.6",
+    "@types/eslint__js": "^8.42.2",
+    "@types/fs-extra": "^11.0.3",
+    "@types/node": "^20.8.7",
     "deepmerge-ts": "^5.1.0",
     "fs-extra": "^11.1.1",
-    "tsx": "^3.13.0",
+    "tsx": "^3.14.0",
     "typescript": "^5.2.2"
   },
   "exports": {
