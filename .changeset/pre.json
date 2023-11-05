@@ -9,6 +9,7 @@
     "@quicksand/typescript-config": "1.0.0-alpha.4"
   },
   "changesets": [
+    "calm-insects-notice",
     "clean-pandas-smell",
     "dry-mugs-lick",
     "slow-papayas-hide",

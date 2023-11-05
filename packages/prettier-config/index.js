@@ -44,8 +44,6 @@ module.exports = {
   // 插件
   plugins: [
     '@prettier/plugin-xml',
-    // TODO 不支持 bun.js 环境
-    // 'prettier-plugin-toml',
     'prettier-plugin-sh',
     'prettier-plugin-package-perfection',
     'prettier-plugin-organize-imports',

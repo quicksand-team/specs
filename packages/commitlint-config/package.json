@@ -1,17 +1,17 @@
 {
   "private": false,
   "name": "@quicksand/commitlint-config",
-  "version": "1.0.0-alpha.12",
+  "version": "1.0.0-alpha.13",
   "type": "commonjs",
   "main": "./index.js",
   "files": [
     "./zh-CN.js"
   ],
   "dependencies": {
-    "@commitlint/cli": "^18.0.0",
-    "@commitlint/config-conventional": "^18.0.0",
-    "@commitlint/config-pnpm-scopes": "^18.0.0",
-    "@commitlint/cz-commitlint": "^18.0.0",
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "@commitlint/config-pnpm-scopes": "^18.1.0",
+    "@commitlint/cz-commitlint": "^18.2.0",
     "commitizen": "^4.3.0"
   }
 }
