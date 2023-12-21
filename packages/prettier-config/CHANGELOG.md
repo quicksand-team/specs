@@ -1,5 +1,11 @@
 # @quicksand/prettier-config
 
+## 1.0.0-alpha.14
+
+### Patch Changes
+
+- 更新依赖
+
 ## 1.0.0-alpha.13
 
 ### Patch Changes
