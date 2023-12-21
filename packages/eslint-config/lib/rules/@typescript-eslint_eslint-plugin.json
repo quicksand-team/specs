@@ -95,9 +95,12 @@
       },
       "messages": {
         "tsDirectiveComment": "Do not use \"@ts-{{directive}}\" because it alters compilation errors.",
+        "tsIgnoreInsteadOfExpectError": "Use \"@ts-expect-error\" instead of \"@ts-ignore\", as \"@ts-ignore\" will do nothing if the following line is error-free.",
         "tsDirectiveCommentRequiresDescription": "Include a description after the \"@ts-{{directive}}\" directive to explain why the @ts-{{directive}} is necessary. The description must be {{minimumDescriptionLength}} characters or longer.",
-        "tsDirectiveCommentDescriptionNotMatchPattern": "The description for the \"@ts-{{directive}}\" directive must match the {{format}} format."
+        "tsDirectiveCommentDescriptionNotMatchPattern": "The description for the \"@ts-{{directive}}\" directive must match the {{format}} format.",
+        "replaceTsIgnoreWithTsExpectError": "Replace \"@ts-ignore\" with \"@ts-expect-error\"."
       },
+      "hasSuggestions": true,
       "schema": [
         {
           "$defs": {
@@ -364,7 +367,17 @@
               "description": "Ingore members marked with the `override` modifier"
             },
             "ignoreClassesThatImplementAnInterface": {
-              "type": "boolean",
+              "oneOf": [
+                {
+                  "type": "boolean",
+                  "description": "Ignore all classes that implement an interface"
+                },
+                {
+                  "type": "string",
+                  "enum": ["public-fields"],
+                  "description": "Ignore only the public fields of classes that implement an interface"
+                }
+              ],
               "description": "Ignore classes that specifically implement some interface"
             }
           },
@@ -2525,6 +2538,44 @@
       }
     }
   },
+  "max-params": {
+    "defaultOptions": [
+      {
+        "max": 3,
+        "countVoidThis": false
+      }
+    ],
+    "meta": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Enforce a maximum number of parameters in function definitions",
+        "extendsBaseRule": true,
+        "url": "https://typescript-eslint.io/rules/max-params"
+      },
+      "schema": [
+        {
+          "type": "object",
+          "properties": {
+            "maximum": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "countVoidThis": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        }
+      ],
+      "messages": {
+        "exceed": "{{name}} has too many parameters ({{count}}). Maximum allowed is {{max}}."
+      }
+    }
+  },
   "member-delimiter-style": {
     "defaultOptions": [
       {
@@ -2675,6 +2726,28 @@
           "protected-constructor",
           "private-constructor",
           "constructor",
+          "public-static-accessor",
+          "protected-static-accessor",
+          "private-static-accessor",
+          "#private-static-accessor",
+          "public-decorated-accessor",
+          "protected-decorated-accessor",
+          "private-decorated-accessor",
+          "public-instance-accessor",
+          "protected-instance-accessor",
+          "private-instance-accessor",
+          "#private-instance-accessor",
+          "public-abstract-accessor",
+          "protected-abstract-accessor",
+          "public-accessor",
+          "protected-accessor",
+          "private-accessor",
+          "#private-accessor",
+          "static-accessor",
+          "instance-accessor",
+          "abstract-accessor",
+          "decorated-accessor",
+          "accessor",
           "public-static-get",
           "protected-static-get",
           "private-static-get",
@@ -2848,6 +2921,28 @@
                 "public-constructor",
                 "protected-constructor",
                 "private-constructor",
+                "accessor",
+                "public-accessor",
+                "public-decorated-accessor",
+                "decorated-accessor",
+                "static-accessor",
+                "public-static-accessor",
+                "instance-accessor",
+                "public-instance-accessor",
+                "abstract-accessor",
+                "public-abstract-accessor",
+                "protected-accessor",
+                "protected-decorated-accessor",
+                "protected-static-accessor",
+                "protected-instance-accessor",
+                "protected-abstract-accessor",
+                "private-accessor",
+                "private-decorated-accessor",
+                "private-static-accessor",
+                "private-instance-accessor",
+                "#private-accessor",
+                "#private-static-accessor",
+                "#private-instance-accessor",
                 "get",
                 "public-get",
                 "public-decorated-get",
@@ -3093,6 +3188,10 @@
         "trailingUnderscore": "allow"
       },
       {
+        "selector": "import",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
         "selector": "variable",
         "format": ["camelCase", "UPPER_CASE"],
         "leadingUnderscore": "allow",
@@ -3248,7 +3347,8 @@
                       "interface",
                       "typeAlias",
                       "enum",
-                      "typeParameter"
+                      "typeParameter",
+                      "import"
                     ]
                   },
                   "additionalItems": false
@@ -3272,7 +3372,9 @@
                       "unused",
                       "requiresQuotes",
                       "override",
-                      "async"
+                      "async",
+                      "default",
+                      "namespace"
                     ]
                   },
                   "additionalItems": false
@@ -3347,7 +3449,9 @@
                       "unused",
                       "requiresQuotes",
                       "override",
-                      "async"
+                      "async",
+                      "default",
+                      "namespace"
                     ]
                   },
                   "additionalItems": false
@@ -4622,6 +4726,58 @@
               },
               "required": ["selector", "format"],
               "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "description": "Selector 'import'",
+              "properties": {
+                "format": {
+                  "$ref": "#/$defs/formatOptionsConfig"
+                },
+                "custom": {
+                  "$ref": "#/$defs/matchRegexConfig"
+                },
+                "leadingUnderscore": {
+                  "$ref": "#/$defs/underscoreOptions"
+                },
+                "trailingUnderscore": {
+                  "$ref": "#/$defs/underscoreOptions"
+                },
+                "prefix": {
+                  "$ref": "#/$defs/prefixSuffixConfig"
+                },
+                "suffix": {
+                  "$ref": "#/$defs/prefixSuffixConfig"
+                },
+                "failureMessage": {
+                  "type": "string"
+                },
+                "filter": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "$ref": "#/$defs/matchRegexConfig"
+                    }
+                  ]
+                },
+                "selector": {
+                  "type": "string",
+                  "enum": ["import"]
+                },
+                "modifiers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["default", "namespace"]
+                  },
+                  "additionalItems": false
+                }
+              },
+              "required": ["selector", "format"],
+              "additionalProperties": false
             }
           ]
         },
@@ -5716,7 +5872,9 @@
         "patternAndImportName": "'{{importName}}' import from '{{importSource}}' is restricted from being used by a pattern.",
         "patternAndImportNameWithCustomMessage": "'{{importName}}' import from '{{importSource}}' is restricted from being used by a pattern. {{customMessage}}",
         "patternAndEverything": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted from being used by a pattern.",
+        "patternAndEverythingWithRegexImportName": "* import is invalid because import name matching '{{importNames}}' pattern from '{{importSource}}' is restricted from being used.",
         "patternAndEverythingWithCustomMessage": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted from being used by a pattern. {{customMessage}}",
+        "patternAndEverythingWithRegexImportNameAndCustomMessage": "* import is invalid because import name matching '{{importNames}}' pattern from '{{importSource}}' is restricted from being used. {{customMessage}}",
         "everything": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted.",
         "everythingWithCustomMessage": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted. {{customMessage}}",
         "importName": "'{{importName}}' import from '{{importSource}}' is restricted.",
@@ -5830,6 +5988,9 @@
                               },
                               "minItems": 1,
                               "uniqueItems": true
+                            },
+                            "importNamePattern": {
+                              "type": "string"
                             },
                             "message": {
                               "type": "string",
@@ -6318,6 +6479,7 @@
   "no-unsafe-enum-comparison": {
     "defaultOptions": [],
     "meta": {
+      "hasSuggestions": true,
       "type": "suggestion",
       "docs": {
         "description": "Disallow comparing an enum value with a non-enum value",
@@ -6326,7 +6488,9 @@
         "url": "https://typescript-eslint.io/rules/no-unsafe-enum-comparison"
       },
       "messages": {
-        "mismatched": "The two values in this comparison do not have a shared enum type."
+        "mismatchedCase": "The case statement does not have a shared enum type with the switch predicate.",
+        "mismatchedCondition": "The two values in this comparison do not have a shared enum type.",
+        "replaceValueWithEnum": "Replace with an enum value comparison."
       },
       "schema": []
     }
@@ -6363,6 +6527,21 @@
         "unsafeReturn": "Unsafe return of an `{{type}}` typed value.",
         "unsafeReturnThis": "Unsafe return of an `{{type}}` typed value. `this` is typed as `any`.\nYou can try to fix this by turning on the `noImplicitThis` compiler option, or adding a `this` parameter to the function.",
         "unsafeReturnAssignment": "Unsafe return of type `{{sender}}` from function with return type `{{receiver}}`."
+      },
+      "schema": []
+    }
+  },
+  "no-unsafe-unary-minus": {
+    "defaultOptions": [],
+    "meta": {
+      "type": "problem",
+      "docs": {
+        "description": "Require unary negation to take a number",
+        "requiresTypeChecking": true,
+        "url": "https://typescript-eslint.io/rules/no-unsafe-unary-minus"
+      },
+      "messages": {
+        "unaryMinus": "Argument of unary negation should be assignable to number | bigint but is {{type}} instead."
       },
       "schema": []
     }
@@ -6562,6 +6741,22 @@
       "type": "suggestion"
     }
   },
+  "no-useless-template-literals": {
+    "defaultOptions": [],
+    "meta": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow unnecessary template literals",
+        "recommended": "strict",
+        "requiresTypeChecking": true,
+        "url": "https://typescript-eslint.io/rules/no-useless-template-literals"
+      },
+      "messages": {
+        "noUselessTemplateLiteral": "Template literal expression is unnecessary and can be simplified."
+      },
+      "schema": []
+    }
+  },
   "no-var-requires": {
     "defaultOptions": [],
     "meta": {
@@ -6597,6 +6792,8 @@
   "object-curly-spacing": {
     "defaultOptions": ["never"],
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing inside braces",
@@ -7542,7 +7739,7 @@
     "meta": {
       "type": "problem",
       "docs": {
-        "description": "Require `Array#sort` calls to always provide a `compareFunction`",
+        "description": "Require `Array#sort` and `Array#toSorted` calls to always provide a `compareFunction`",
         "requiresTypeChecking": true,
         "url": "https://typescript-eslint.io/rules/require-array-sort-compare"
       },
@@ -8059,16 +8256,31 @@
     }
   },
   "switch-exhaustiveness-check": {
-    "defaultOptions": [],
+    "defaultOptions": [
+      {
+        "requireDefaultForNonUnion": false
+      }
+    ],
     "meta": {
       "type": "suggestion",
       "docs": {
-        "description": "Require switch-case statements to be exhaustive with union type",
+        "description": "Require switch-case statements to be exhaustive",
         "requiresTypeChecking": true,
         "url": "https://typescript-eslint.io/rules/switch-exhaustiveness-check"
       },
       "hasSuggestions": true,
-      "schema": [],
+      "schema": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requireDefaultForNonUnion": {
+              "description": "If 'true', require a 'default' clause for switches on non-union types.",
+              "type": "boolean"
+            }
+          }
+        }
+      ],
       "messages": {
         "switchIsNotExhaustive": "Switch is not exhaustive. Cases not matched: {{missingBranches}}",
         "addMissingCases": "Add branches for missing cases."

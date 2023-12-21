@@ -118,6 +118,7 @@ export default {
       'vue/padding-line-between-blocks': 'off',
       'vue/padding-line-between-tags': 'off',
       'vue/padding-lines-in-component-definition': 'off',
+      'vue/quote-props': 'off',
       'vue/script-indent': 'off',
       'vue/singleline-html-element-content-newline': 'off',
       'vue/space-in-parens': 'off',
@@ -365,7 +366,13 @@ export default {
       'vue/require-prop-types': 'warn',
       'vue/singleline-html-element-content-newline': 'warn',
       'vue/v-bind-style': 'warn',
-      'vue/v-on-event-hyphenation': 'warn',
+      'vue/v-on-event-hyphenation': [
+        'warn',
+        'always',
+        {
+          autofix: true,
+        },
+      ],
       'vue/v-on-style': 'warn',
       'vue/v-slot-style': 'warn',
       'vue/attributes-order': 'warn',
@@ -482,7 +489,13 @@ export default {
       'vue/require-prop-types': 'warn',
       'vue/singleline-html-element-content-newline': 'warn',
       'vue/v-bind-style': 'warn',
-      'vue/v-on-event-hyphenation': 'warn',
+      'vue/v-on-event-hyphenation': [
+        'warn',
+        'always',
+        {
+          autofix: true,
+        },
+      ],
       'vue/v-on-style': 'warn',
       'vue/v-slot-style': 'warn',
     },

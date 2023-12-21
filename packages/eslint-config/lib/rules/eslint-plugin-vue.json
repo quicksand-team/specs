@@ -7,8 +7,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/array-bracket-newline.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/array-bracket-newline"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/array-bracket-newline",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -49,8 +51,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/array-bracket-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/array-bracket-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/array-bracket-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -89,8 +93,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/array-element-newline.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/array-element-newline"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/array-element-newline",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": {
@@ -154,8 +160,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/arrow-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/arrow-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/arrow-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -410,8 +418,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/block-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/block-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/block-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -490,8 +500,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/brace-style.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/brace-style"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/brace-style",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -527,8 +539,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/camelcase.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/camelcase"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/camelcase",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -577,8 +591,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/comma-dangle.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/comma-dangle"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/comma-dangle",
+          "name": "ESLint core"
+        }
       },
       "fixable": "code",
       "schema": {
@@ -643,8 +659,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/comma-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/comma-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/comma-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -677,8 +695,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/comma-style.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/comma-style"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/comma-style",
+          "name": "ESLint core"
+        }
       },
       "fixable": "code",
       "schema": [
@@ -962,12 +982,13 @@
       "fixable": null,
       "schema": [
         {
-          "enum": ["type-based", "runtime"]
+          "enum": ["type-based", "type-literal", "runtime"]
         }
       ],
       "messages": {
-        "hasArg": "Use type-based declaration instead of runtime declaration.",
-        "hasTypeArg": "Use runtime declaration instead of type-based declaration."
+        "hasArg": "Use type based declaration instead of runtime declaration.",
+        "hasTypeArg": "Use runtime declaration instead of type based declaration.",
+        "hasTypeCallArg": "Use new type literal declaration instead of the old call signature declaration."
       }
     }
   },
@@ -1032,8 +1053,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/dot-location.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/dot-location"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/dot-location",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -1055,8 +1078,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/dot-notation.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/dot-notation"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/dot-notation",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -1089,8 +1114,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/eqeqeq.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/eqeqeq"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/eqeqeq",
+          "name": "ESLint core"
+        }
       },
       "schema": {
         "anyOf": [
@@ -1166,8 +1193,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/func-call-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/func-call-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/func-call-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": {
@@ -1633,8 +1662,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/key-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/key-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/key-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -1814,8 +1845,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/keyword-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/keyword-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/keyword-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -2775,8 +2808,10 @@
       "docs": {
         "description": "enforce a maximum line length in `.vue` files",
         "url": "https://eslint.vuejs.org/rules/max-len.html",
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/rules/max-len"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/rules/max-len",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -3060,8 +3095,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/multiline-ternary.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/multiline-ternary"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/multiline-ternary",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -3298,8 +3335,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/no-console.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-console"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/no-console",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -3317,8 +3356,10 @@
           "additionalProperties": false
         }
       ],
+      "hasSuggestions": true,
       "messages": {
-        "unexpected": "Unexpected console statement."
+        "unexpected": "Unexpected console statement.",
+        "removeConsole": "Remove the console.{{ propertyName }}()."
       }
     }
   },
@@ -3330,8 +3371,10 @@
         "recommended": true,
         "url": "https://eslint.vuejs.org/rules/no-constant-condition.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-constant-condition"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/no-constant-condition",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -3598,7 +3641,21 @@
         "url": "https://eslint.vuejs.org/rules/no-deprecated-slot-attribute.html"
       },
       "fixable": "code",
-      "schema": [],
+      "schema": [
+        {
+          "type": "object",
+          "properties": {
+            "ignore": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        }
+      ],
       "messages": {
         "forbiddenSlotAttribute": "`slot` attributes are deprecated."
       }
@@ -3799,8 +3856,10 @@
         "recommended": true,
         "url": "https://eslint.vuejs.org/rules/no-empty-pattern.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-empty-pattern"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/no-empty-pattern",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -3857,8 +3916,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/no-extra-parens.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-extra-parens"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/no-extra-parens",
+          "name": "ESLint core"
+        }
       },
       "fixable": "code",
       "schema": {
@@ -3948,8 +4009,10 @@
       "docs": {
         "description": "disallow irregular whitespace in `.vue` files",
         "url": "https://eslint.vuejs.org/rules/no-irregular-whitespace.html",
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/rules/no-irregular-whitespace"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/rules/no-irregular-whitespace",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -4036,8 +4099,10 @@
         "recommended": true,
         "url": "https://eslint.vuejs.org/rules/no-loss-of-precision.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-loss-of-precision"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/no-loss-of-precision",
+          "name": "ESLint core"
+        }
       },
       "schema": [],
       "messages": {
@@ -4873,8 +4938,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/no-restricted-syntax.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-restricted-syntax"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/no-restricted-syntax",
+          "name": "ESLint core"
+        }
       },
       "schema": {
         "type": "array",
@@ -5056,8 +5123,10 @@
         "recommended": true,
         "url": "https://eslint.vuejs.org/rules/no-sparse-arrays.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-sparse-arrays"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/no-sparse-arrays",
+          "name": "ESLint core"
+        }
       },
       "schema": [],
       "messages": {
@@ -5315,6 +5384,20 @@
       }
     }
   },
+  "no-unused-emit-declarations": {
+    "meta": {
+      "type": "suggestion",
+      "docs": {
+        "description": "disallow unused emit declarations",
+        "url": "https://eslint.vuejs.org/rules/no-unused-emit-declarations.html"
+      },
+      "fixable": null,
+      "schema": [],
+      "messages": {
+        "unused": "`{{name}}` is defined as emit but never used."
+      }
+    }
+  },
   "no-unused-properties": {
     "meta": {
       "type": "suggestion",
@@ -5470,8 +5553,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/no-useless-concat.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/no-useless-concat"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/no-useless-concat",
+          "name": "ESLint core"
+        }
       },
       "schema": [],
       "messages": {
@@ -5661,8 +5746,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/object-curly-newline.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/object-curly-newline"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/object-curly-newline",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -5814,8 +5901,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/object-curly-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/object-curly-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/object-curly-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -5851,8 +5940,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/object-property-newline.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/object-property-newline"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/object-property-newline",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -5885,8 +5976,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/object-shorthand.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/object-shorthand"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/object-shorthand",
+          "name": "ESLint core"
+        }
       },
       "fixable": "code",
       "schema": {
@@ -5991,8 +6084,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/operator-linebreak.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/operator-linebreak"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/operator-linebreak",
+          "name": "ESLint core"
+        }
       },
       "schema": [
         {
@@ -6235,8 +6330,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/prefer-template.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/prefer-template"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/prefer-template",
+          "name": "ESLint core"
+        }
       },
       "schema": [],
       "fixable": "code",
@@ -6295,8 +6392,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/quote-props.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/quote-props"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/quote-props",
+          "name": "ESLint core"
+        }
       },
       "schema": {
         "anyOf": [
@@ -6838,6 +6937,14 @@
               },
               "uniqueItems": true,
               "additionalItems": false
+            },
+            "externalIgnores": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true,
+              "additionalItems": false
             }
           },
           "additionalProperties": false
@@ -6906,8 +7013,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/space-in-parens.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/space-in-parens"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/space-in-parens",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -6944,8 +7053,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/space-infix-ops.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/space-infix-ops"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/space-infix-ops",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -6973,8 +7084,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/space-unary-ops.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/space-unary-ops"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/space-unary-ops",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -7031,8 +7144,10 @@
         "recommended": false,
         "url": "https://eslint.vuejs.org/rules/template-curly-spacing.html",
         "category": null,
-        "extensionRule": true,
-        "coreRuleUrl": "https://eslint.org/docs/latest/rules/template-curly-spacing"
+        "extensionSource": {
+          "url": "https://eslint.org/docs/latest/rules/template-curly-spacing",
+          "name": "ESLint core"
+        }
       },
       "fixable": "whitespace",
       "schema": [
@@ -7123,13 +7238,37 @@
       }
     }
   },
+  "v-if-else-key": {
+    "meta": {
+      "type": "problem",
+      "docs": {
+        "description": "require key attribute for conditionally rendered repeated components",
+        "categories": null,
+        "recommended": false,
+        "url": "https://eslint.vuejs.org/rules/v-if-else-key.html"
+      },
+      "fixable": "code",
+      "schema": [],
+      "messages": {
+        "requireKey": "Conditionally rendered repeated component '{{componentName}}' expected to have a 'key' attribute."
+      }
+    }
+  },
   "v-on-event-hyphenation": {
     "meta": {
       "type": "suggestion",
       "docs": {
         "description": "enforce v-on event naming style on custom components in template",
         "categories": ["vue3-strongly-recommended"],
-        "url": "https://eslint.vuejs.org/rules/v-on-event-hyphenation.html"
+        "url": "https://eslint.vuejs.org/rules/v-on-event-hyphenation.html",
+        "defaultOptions": {
+          "vue3": [
+            "always",
+            {
+              "autofix": true
+            }
+          ]
+        }
       },
       "fixable": "code",
       "schema": [

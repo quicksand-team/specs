@@ -8,10 +8,10 @@
     "./zh-CN.js"
   ],
   "dependencies": {
-    "@commitlint/cli": "^18.2.0",
-    "@commitlint/config-conventional": "^18.1.0",
-    "@commitlint/config-pnpm-scopes": "^18.1.0",
-    "@commitlint/cz-commitlint": "^18.2.0",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/config-pnpm-scopes": "^18.4.3",
+    "@commitlint/cz-commitlint": "^18.4.3",
     "commitizen": "^4.3.0"
   }
 }

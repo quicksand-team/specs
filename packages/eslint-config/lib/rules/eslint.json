@@ -39,6 +39,8 @@
   },
   "array-bracket-newline": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce linebreaks after opening and before closing array brackets",
@@ -78,6 +80,8 @@
   },
   "array-bracket-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing inside array brackets",
@@ -154,6 +158,8 @@
   },
   "array-element-newline": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce line breaks after each array element",
@@ -267,6 +273,8 @@
   },
   "arrow-parens": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require parentheses around arrow function arguments",
@@ -299,6 +307,8 @@
   },
   "arrow-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing before and after the arrow in arrow functions",
@@ -346,6 +356,8 @@
   },
   "block-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Disallow or enforce spaces inside of blocks after opening block and before closing block",
@@ -366,6 +378,8 @@
   },
   "brace-style": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent brace style for blocks",
@@ -576,6 +590,8 @@
   },
   "comma-dangle": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow trailing commas",
@@ -639,6 +655,8 @@
   },
   "comma-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing before and after commas",
@@ -670,6 +688,8 @@
   },
   "comma-style": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent comma style",
@@ -740,6 +760,8 @@
   },
   "computed-property-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing inside computed property brackets",
@@ -935,6 +957,8 @@
   },
   "dot-location": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent newlines before and after dots",
@@ -986,6 +1010,8 @@
   },
   "eol-last": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow newline at the end of files",
@@ -1066,6 +1092,8 @@
   },
   "func-call-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow spacing between function identifiers and their invocations",
@@ -1238,6 +1266,8 @@
   },
   "function-call-argument-newline": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce line breaks between arguments of a function call",
@@ -1258,6 +1288,8 @@
   },
   "function-paren-newline": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent line breaks inside function parentheses",
@@ -1301,6 +1333,8 @@
   },
   "generator-star-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing around `*` operators in generator functions",
@@ -1624,6 +1658,8 @@
   },
   "implicit-arrow-linebreak": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce the location of arrow function bodies",
@@ -1644,6 +1680,8 @@
   },
   "indent": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent indentation",
@@ -2078,6 +2116,8 @@
   },
   "jsx-quotes": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce the consistent use of either double or single quotes in JSX attributes",
@@ -2097,6 +2137,8 @@
   },
   "key-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing between keys and values in object literal properties",
@@ -2275,6 +2317,8 @@
   },
   "keyword-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing before and after keywords",
@@ -3171,6 +3215,8 @@
   },
   "linebreak-style": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent linebreak style",
@@ -3191,6 +3237,8 @@
   },
   "lines-around-comment": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require empty lines around comments",
@@ -3305,6 +3353,8 @@
   },
   "lines-between-class-members": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow an empty line between class members",
@@ -3493,6 +3543,8 @@
   },
   "max-len": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce a maximum line length",
@@ -3843,6 +3895,8 @@
   },
   "max-statements-per-line": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce a maximum number of statements allowed per line",
@@ -3920,6 +3974,8 @@
   },
   "multiline-ternary": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce newlines between operands of ternary expressions",
@@ -3994,6 +4050,8 @@
   },
   "new-parens": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce or disallow parentheses when invoking a constructor with no arguments",
@@ -4053,6 +4111,8 @@
   },
   "newline-per-chained-call": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require a newline after each call in a method chain",
@@ -4101,9 +4161,12 @@
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/no-array-constructor"
       },
+      "hasSuggestions": true,
       "schema": [],
       "messages": {
-        "preferLiteral": "The array literal notation [] is preferable."
+        "preferLiteral": "The array literal notation [] is preferable.",
+        "useLiteral": "Replace with an array literal.",
+        "useLiteralAfterSemicolon": "Replace with an array literal, add preceding semicolon."
       }
     }
   },
@@ -4292,6 +4355,8 @@
   },
   "no-confusing-arrow": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "suggestion",
       "docs": {
         "description": "Disallow arrow functions where they could be confused with comparisons",
@@ -4344,8 +4409,10 @@
           "additionalProperties": false
         }
       ],
+      "hasSuggestions": true,
       "messages": {
-        "unexpected": "Unexpected console statement."
+        "unexpected": "Unexpected console statement.",
+        "removeConsole": "Remove the console.{{ propertyName }}()."
       }
     }
   },
@@ -4875,6 +4942,8 @@
   },
   "no-extra-parens": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Disallow unnecessary parentheses",
@@ -4949,6 +5018,8 @@
   },
   "no-extra-semi": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "suggestion",
       "docs": {
         "description": "Disallow unnecessary semicolons",
@@ -4994,6 +5065,8 @@
   },
   "no-floating-decimal": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "suggestion",
       "docs": {
         "description": "Disallow leading or trailing decimal points in numeric literals",
@@ -5485,6 +5558,8 @@
   },
   "no-mixed-operators": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "suggestion",
       "docs": {
         "description": "Disallow mixed binary operators",
@@ -5587,6 +5662,8 @@
   },
   "no-mixed-spaces-and-tabs": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Disallow mixed spaces and tabs for indentation",
@@ -5630,6 +5707,8 @@
   },
   "no-multi-spaces": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Disallow multiple spaces",
@@ -5679,6 +5758,8 @@
   },
   "no-multiple-empty-lines": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Disallow multiple empty lines",
@@ -6142,9 +6223,11 @@
         "recommended": true,
         "url": "https://eslint.org/docs/latest/rules/no-prototype-builtins"
       },
+      "hasSuggestions": true,
       "schema": [],
       "messages": {
-        "prototypeBuildIn": "Do not access Object.prototype method '{{prop}}' from target object."
+        "prototypeBuildIn": "Do not access Object.prototype method '{{prop}}' from target object.",
+        "callObjectPrototype": "Call Object.prototype.{{prop}} explicitly."
       }
     }
   },
@@ -6313,7 +6396,9 @@
         "patternAndImportName": "'{{importName}}' import from '{{importSource}}' is restricted from being used by a pattern.",
         "patternAndImportNameWithCustomMessage": "'{{importName}}' import from '{{importSource}}' is restricted from being used by a pattern. {{customMessage}}",
         "patternAndEverything": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted from being used by a pattern.",
+        "patternAndEverythingWithRegexImportName": "* import is invalid because import name matching '{{importNames}}' pattern from '{{importSource}}' is restricted from being used.",
         "patternAndEverythingWithCustomMessage": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted from being used by a pattern. {{customMessage}}",
+        "patternAndEverythingWithRegexImportNameAndCustomMessage": "* import is invalid because import name matching '{{importNames}}' pattern from '{{importSource}}' is restricted from being used. {{customMessage}}",
         "everything": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted.",
         "everythingWithCustomMessage": "* import is invalid because '{{importNames}}' from '{{importSource}}' is restricted. {{customMessage}}",
         "importName": "'{{importName}}' import from '{{importSource}}' is restricted.",
@@ -6418,6 +6503,9 @@
                               },
                               "minItems": 1,
                               "uniqueItems": true
+                            },
+                            "importNamePattern": {
+                              "type": "string"
                             },
                             "message": {
                               "type": "string",
@@ -6867,6 +6955,8 @@
   },
   "no-tabs": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Disallow all tabs",
@@ -6949,6 +7039,8 @@
   },
   "no-trailing-spaces": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Disallow trailing whitespace at the end of lines",
@@ -7673,6 +7765,8 @@
   },
   "no-whitespace-before-property": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Disallow whitespace before properties",
@@ -7702,6 +7796,8 @@
   },
   "nonblock-statement-body-position": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce the location of single-line statements",
@@ -7747,6 +7843,8 @@
   },
   "object-curly-newline": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent line breaks after opening and before closing braces",
@@ -7897,6 +7995,8 @@
   },
   "object-curly-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing inside braces",
@@ -7931,6 +8031,8 @@
   },
   "object-property-newline": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce placing object properties on separate lines",
@@ -8109,6 +8211,8 @@
   },
   "one-var-declaration-per-line": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "suggestion",
       "docs": {
         "description": "Require or disallow newlines around variable declarations",
@@ -8148,6 +8252,8 @@
   },
   "operator-linebreak": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent linebreak style for operators",
@@ -8182,6 +8288,8 @@
   },
   "padded-blocks": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow padding within blocks",
@@ -8231,6 +8339,8 @@
   },
   "padding-line-between-statements": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow padding lines between statements",
@@ -8714,6 +8824,8 @@
   },
   "quote-props": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "suggestion",
       "docs": {
         "description": "Require quotes around object literal property names",
@@ -8783,6 +8895,8 @@
   },
   "quotes": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce the consistent use of either backticks, double, or single quotes",
@@ -8965,6 +9079,8 @@
   },
   "rest-spread-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce spacing between rest and spread operators and their expressions",
@@ -8985,6 +9101,8 @@
   },
   "semi": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow semicolons instead of ASI",
@@ -9045,6 +9163,8 @@
   },
   "semi-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing before and after semicolons",
@@ -9078,6 +9198,8 @@
   },
   "semi-style": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce location of semicolons",
@@ -9213,6 +9335,8 @@
   },
   "space-before-blocks": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing before blocks",
@@ -9252,6 +9376,8 @@
   },
   "space-before-function-paren": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing before `function` definition opening parenthesis",
@@ -9291,6 +9417,8 @@
   },
   "space-in-parens": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing inside parentheses",
@@ -9326,6 +9454,8 @@
   },
   "space-infix-ops": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require spacing around infix operators",
@@ -9352,6 +9482,8 @@
   },
   "space-unary-ops": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce consistent spacing before or after unary operators",
@@ -9393,6 +9525,8 @@
   },
   "spaced-comment": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "suggestion",
       "docs": {
         "description": "Enforce consistent spacing after the `//` or `/*` in a comment",
@@ -9503,6 +9637,8 @@
   },
   "switch-colon-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Enforce spacing around colons of switch statements",
@@ -9551,6 +9687,8 @@
   },
   "template-curly-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow spacing around embedded expressions of template strings",
@@ -9573,6 +9711,8 @@
   },
   "template-tag-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow spacing between template tags and their literals",
@@ -9759,6 +9899,8 @@
   },
   "wrap-iife": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require parentheses around immediate `function` invocations",
@@ -9790,6 +9932,8 @@
   },
   "wrap-regex": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require parenthesis around regex literals",
@@ -9805,6 +9949,8 @@
   },
   "yield-star-spacing": {
     "meta": {
+      "deprecated": true,
+      "replacedBy": [],
       "type": "layout",
       "docs": {
         "description": "Require or disallow spacing around the `*` in `yield*` expressions",
